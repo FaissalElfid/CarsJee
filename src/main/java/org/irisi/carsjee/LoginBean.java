@@ -32,9 +32,9 @@ public class LoginBean implements Serializable {
     }
     public String returnAction() {
         System.out.println( "in returnAction" );
-        if(password.equals("007")){
+        if(!password.equals("007")){
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "False Email or Password !!"));
-            return "fail";
+            return "failure";
         }else{
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Login success."));
             return "success";
