@@ -3,6 +3,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:p="http://primefaces.org/ui">
 
 <h:head>
@@ -17,6 +18,8 @@
 </h:head>
 
 <h:body styleClass="login-body">
+    <p:growl id="growl" showDetail="true"/>
+
     <div class="login-wrapper">
         <h:form class="login-panel">
             <h:link outcome="/landing" styleClass="logo">
