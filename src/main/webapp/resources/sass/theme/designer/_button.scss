@@ -1,0 +1,594 @@
+body {
+    .ui-button {
+        background: $buttonBg;
+        color: $buttonTextColor;
+        border: $buttonBorder;
+        margin: 0;
+        outline: 0 none;
+        border-radius: $borderRadius;
+        transition: $transition;
+    
+        &.ui-state-hover {
+            background: $buttonHoverBg;
+            border-color: $buttonHoverBorderColor;
+            color: $buttonTextHoverColor;
+        }
+
+        &.ui-state-focus {
+            outline: $buttonFocusOutline;
+            outline-offset: $buttonFocusOutlineOffset;
+            box-shadow: $buttonFocusShadow;
+        }
+    
+        &.ui-state-active, &.ui-state-down {
+            background: $buttonActiveBg;
+            border-color: $buttonActiveBorderColor;
+            color: $buttonTextActiveColor;
+        }
+
+        &.outlined-button {
+            background-color: transparent;
+            color: $buttonBg;
+            border: $outlinedButtonBorder;
+    
+            &.ui-state-hover {
+                background: rgba($buttonBg, $textButtonHoverBgOpacity);
+                color: $buttonBg;
+                border: $outlinedButtonBorder;
+            }
+    
+            &.ui-state-active, &.ui-state-down {
+                background: rgba($buttonBg, $textButtonActiveBgOpacity);
+                color: $buttonBg;
+                border: $outlinedButtonBorder;
+            }
+        }
+    
+        &.text-button {
+            background-color: transparent;
+            color: $buttonBg;
+            border-color: transparent;
+    
+            &.ui-state-hover {
+                background: rgba($buttonBg, $textButtonHoverBgOpacity);
+                color: $buttonBg;
+                border-color: transparent;
+            }
+    
+            &.ui-state-active, &.ui-state-down {
+                background: rgba($buttonBg, $textButtonActiveBgOpacity);
+                color: $buttonBg;
+                border-color: transparent;
+            }
+        }
+                    
+        &.ui-button-text-only {
+            .ui-button-text {
+                padding: $buttonTextOnlyPadding;
+            }
+        }
+        
+        &.ui-button-text-icon-left {
+            .ui-button-text {
+                padding: $buttonWithLeftIconPadding;
+            }
+            
+            .ui-icon {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -1 * $iconSize / 2;
+                left: $iconSize / 2;
+            }
+        }
+        
+        &.ui-button-text-icon-right {
+            .ui-button-text {
+                padding: $buttonWithRightIconPadding;
+            }
+            
+            .ui-icon {
+                position: absolute;
+                top: 50%;
+                right: 50%;
+                margin-top: -1 * $iconSize / 2;
+                right: $iconSize / 2;
+            }
+        }
+        
+        &.ui-button-icon-only {
+            width: $buttonIconOnlyWidth;
+            
+            .ui-button-text {
+                padding: $buttonIconOnlyPadding;
+            }
+            
+            .ui-icon {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -1 * $iconSize / 2;
+                margin-left:  -1 * $iconSize / 2;
+            }
+        }
+
+        &.raised-button {
+            box-shadow: $raisedButtonShadow;
+        }
+        
+        &.rounded-button {
+            border-radius: $roundedButtonBorderRadius;
+
+            &.ui-button-icon-only {
+                border-radius: 50%;
+                height: $buttonIconOnlyWidth;
+            }
+        }
+
+        .ui-icon-triangle-1-s {
+            @include icon_override("\e902");
+        } 
+    }
+
+    .ui-selectbooleanbutton, 
+    .ui-selectonebutton > .ui-button,
+    .ui-selectmanybutton > .ui-button {
+        background: $toggleButtonBg;
+        color: $toggleButtonTextColor;
+        border: $toggleButtonBorder;
+        outline: 0 none;
+        transition: $transition;
+        
+        .ui-icon {
+            color: $toggleButtonIconColor;
+        }
+    
+        &.ui-state-hover {
+            background: $toggleButtonHoverBg;
+            border-color: $toggleButtonHoverBorderColor;
+            color: $toggleButtonTextHoverColor;
+
+            .ui-icon {
+                color: $toggleButtonHoverIconColor;
+            }
+        }
+    
+        &.ui-state-active {
+            background: $toggleButtonActiveBg;
+            border-color: $toggleButtonActiveBorderColor;
+            color: $toggleButtonTextActiveColor;
+
+            .ui-icon {
+                color: $toggleButtonActiveIconColor;
+            }
+
+            &:not(.ui-state-disabled):hover {
+                background: $toggleButtonActiveHoverBg;
+                border-color: $toggleButtonActiveHoverBorderColor;
+                color: $toggleButtonActiveTextHoverColor;
+    
+                .ui-icon {
+                    color: $toggleButtonActiveHoverIconColor;
+                }
+            }
+        }
+    }
+
+    .ui-selectonebutton > .ui-button,
+    .ui-selectmanybutton > .ui-button {
+        border-radius: 0;
+
+        &:first-child {
+            border-top-left-radius: $borderRadius;
+            border-bottom-left-radius: $borderRadius;
+        }
+
+        &:last-child {
+            border-top-right-radius: $borderRadius;
+            border-bottom-right-radius: $borderRadius;
+        }
+
+        &.ui-state-focus {
+            z-index: 1;
+        }
+
+        &:not(:last-child) {
+            border-right-width: 0;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .ui-selectonebutton > div.ui-button,
+        .ui-selectmanybutton > div.ui-button {
+            &:not(:last-child) {
+                border-bottom-width: 0;
+                border-right-width: 1px;
+            }
+            
+            &:first-child {
+                @include border-radius-top($borderRadius);
+                @include border-radius-bottom(0);
+            }
+    
+            &:last-child {
+                @include border-radius-top(0);
+                @include border-radius-bottom($borderRadius);
+                border-bottom-width: 1px;
+            }
+        }
+    }
+
+    @media (max-width: 640px) {
+        .ui-dataview-layout-options > div.ui-button {
+            &:not(:last-child) {
+                border-bottom-width: 1px;
+                border-right-width: 0;
+            }
+            
+            &:first-child {
+                @include border-radius-left($borderRadius);
+                @include border-radius-right(0);
+            }
+    
+            &:last-child {
+                @include border-radius-left(0);
+                @include border-radius-right($borderRadius);
+            }
+        }
+    }
+
+    .ui-splitbutton {
+        padding: 0;
+
+        .ui-button:first-child {
+            position: relative;
+            margin: 0;
+            border-top-left-radius: $borderRadius;
+            border-bottom-left-radius: $borderRadius;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+
+            &.ui-state-focus {
+                z-index: 1;
+            }
+        }
+
+        .ui-splitbuttonmenu {
+            min-width: 100%;
+        }
+        
+        .ui-button.ui-splitbutton-menubutton {
+            cursor: pointer;
+            height: auto;
+            padding: 0;
+            position: relative;
+            margin: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: $borderRadius;
+            border-bottom-right-radius: $borderRadius;
+
+            .ui-icon.ui-icon-triangle-1-s {
+                @include icon_override("\e902");
+            }
+        }
+    }
+
+    .ui-button-group {
+        .ui-button {
+            margin: 0;
+            border-radius: 0;
+
+            &:first-child {
+                border-top-left-radius: $borderRadius;
+                border-bottom-left-radius: $borderRadius;
+            }
+
+            &:last-child {
+                border-top-right-radius: $borderRadius;
+                border-bottom-right-radius: $borderRadius;
+            }
+
+            &.ui-state-focus {
+                z-index: 1;
+            }
+        }
+    }
+
+    .ui-button.secondary-button, .ui-splitbutton.secondary-button > .ui-button {
+        @include secondary-button();
+    }
+
+    .ui-button.success-button, .ui-splitbutton.success-button > .ui-button {
+        background:$successButtonBg;
+        color: $successButtonTextColor;
+        border: $successButtonBorder;
+
+        &.ui-state-hover {
+            background: $successButtonHoverBg;
+            color: $successButtonTextHoverColor;
+            border-color: $successButtonHoverBorderColor;
+        }
+
+        &.ui-state-focus {
+            box-shadow: $successButtonFocusShadow;
+        }
+
+        &.ui-state-active {
+            background: $successButtonActiveBg;
+            color: $successButtonTextActiveColor;
+        }
+
+        &.outlined-button {
+            background-color: transparent;
+            color: $successButtonBg;
+            border: $outlinedButtonBorder;
+    
+            &:enabled:hover {
+                background: rgba($successButtonBg, $textButtonHoverBgOpacity);
+                color: $successButtonBg;
+                border: $outlinedButtonBorder;
+            }
+    
+            &:enabled:active {
+                background: rgba($successButtonBg, $textButtonActiveBgOpacity);
+                color: $successButtonBg;
+                border: $outlinedButtonBorder;
+            }
+        }
+    
+        &.text-button {
+            background-color: transparent;
+            color: $successButtonBg;
+            border-color: transparent;
+    
+            &:enabled:hover {
+                background: rgba($successButtonBg, $textButtonHoverBgOpacity);
+                border-color: transparent;
+                color: $successButtonBg;
+            }
+    
+            &:enabled:active {
+                background: rgba($successButtonBg, $textButtonActiveBgOpacity);
+                border-color: transparent;
+                color: $successButtonBg;
+            }
+        }
+    }
+
+    .ui-button.warning-button, .ui-splitbutton.warning-button > .ui-button {
+        background: $warningButtonBg;
+        color: $warningButtonTextColor;
+        border: $warningButtonBorder;
+
+        &.ui-state-hover {
+            background: $warningButtonHoverBg;
+            color: $warningButtonTextHoverColor;
+            border-color: $warningButtonHoverBorderColor;
+        }
+
+        &.ui-state-focus {
+            box-shadow: $warningButtonFocusShadow;
+        }
+
+        &.ui-state-active {
+            background:$warningButtonActiveBg;
+            color: $warningButtonTextActiveColor;
+            border-color: $warningButtonActiveBorderColor;
+        }
+
+        &.outlined-button {
+            background-color: transparent;
+            color: $warningButtonBg;
+            border: $outlinedButtonBorder;
+    
+            &:enabled:hover {
+                background: rgba($warningButtonBg, $textButtonHoverBgOpacity);
+                color: $warningButtonBg;
+                border: $outlinedButtonBorder;
+            }
+    
+            &:enabled:active {
+                background: rgba($warningButtonBg, $textButtonActiveBgOpacity);
+                color: $warningButtonBg;
+                border: $outlinedButtonBorder;
+            }
+        }
+    
+        &.text-button {
+            background-color: transparent;
+            color: $warningButtonBg;
+            border-color: transparent;
+    
+            &:enabled:hover {
+                background: rgba($warningButtonBg, $textButtonHoverBgOpacity);
+                border-color: transparent;
+                color: $warningButtonBg;
+            }
+    
+            &:enabled:active {
+                background: rgba($warningButtonBg, $textButtonActiveBgOpacity);
+                border-color: transparent;
+                color: $warningButtonBg;
+            }
+        }
+    }
+
+    .ui-button.help-button, .ui-splitbutton.help-button > .ui-button {
+        background: $helpButtonBg;
+        color: $helpButtonTextColor;
+        border: $helpButtonBorder;
+
+        &.ui-state-hover {
+            background: $helpButtonHoverBg;
+            color: $helpButtonTextHoverColor;
+            border-color: $helpButtonHoverBorderColor;
+        }
+
+        &.ui-state-focus {
+            box-shadow: $helpButtonFocusShadow;
+        }
+
+        &.ui-state-active {
+            background:$helpButtonActiveBg;
+            color: $helpButtonTextActiveColor;
+            border-color: $helpButtonActiveBorderColor;
+        }
+
+        &.outlined-button {
+            background-color: transparent;
+            color: $helpButtonBg;
+            border: $outlinedButtonBorder;
+    
+            &:enabled:hover {
+                background: rgba($helpButtonBg, $textButtonHoverBgOpacity);
+                color: $helpButtonBg;
+                border: $outlinedButtonBorder;
+            }
+    
+            &:enabled:active {
+                background: rgba($helpButtonBg, $textButtonActiveBgOpacity);
+                color: $helpButtonBg;
+                border: $outlinedButtonBorder;
+            }
+        }
+    
+        &.text-button {
+            background-color: transparent;
+            color: $helpButtonBg;
+            border-color: transparent;
+    
+            &:enabled:hover {
+                background: rgba($helpButtonBg, $textButtonHoverBgOpacity);
+                border-color: transparent;
+                color: $helpButtonBg;
+            }
+    
+            &:enabled:active {
+                background: rgba($helpButtonBg, $textButtonActiveBgOpacity);
+                border-color: transparent;
+                color: $helpButtonBg;
+            }
+        }
+    }
+
+    .ui-button.info-button, .ui-splitbutton.info-button > .ui-button {
+        background: $infoButtonBg;
+        color: $infoButtonTextColor;
+        border: $infoButtonBorder;
+
+        &.ui-state-hover {
+            background: $infoButtonHoverBg;
+            color: $infoButtonTextHoverColor;
+            border-color: $infoButtonHoverBorderColor;
+        }
+
+        &.ui-state-focus {
+            box-shadow: $infoButtonFocusShadow;
+        }
+
+        &.ui-state-active {
+            background:$infoButtonActiveBg;
+            color: $infoButtonTextActiveColor;
+            border-color: $infoButtonActiveBorderColor;
+        }
+
+        &.outlined-button {
+            background-color: transparent;
+            color: $infoButtonBg;
+            border: $outlinedButtonBorder;
+    
+            &:enabled:hover {
+                background: rgba($infoButtonBg, $textButtonHoverBgOpacity);
+                color: $infoButtonBg;
+                border: $outlinedButtonBorder;
+            }
+    
+            &:enabled:active {
+                background: rgba($infoButtonBg, $textButtonActiveBgOpacity);
+                color: $infoButtonBg;
+                border: $outlinedButtonBorder;
+            }
+        }
+    
+        &.text-button {
+            background-color: transparent;
+            color: $infoButtonBg;
+            border-color: transparent;
+    
+            &:enabled:hover {
+                background: rgba($infoButtonBg, $textButtonHoverBgOpacity);
+                border-color: transparent;
+                color: $infoButtonBg;
+            }
+    
+            &:enabled:active {
+                background: rgba($infoButtonBg, $textButtonActiveBgOpacity);
+                border-color: transparent;
+                color: $infoButtonBg;
+            }
+        }
+    }
+
+    .ui-button.danger-button, .ui-splitbutton.danger-button > .ui-button {
+        background: $dangerButtonBg;
+        color: $dangerButtonTextColor;
+        border: $dangerButtonBorder;
+
+        &.ui-state-hover {
+            background: $dangerButtonHoverBg;
+            color: $dangerButtonTextHoverColor;
+            border-color: $dangerButtonHoverBorderColor;
+        }
+
+        &.ui-state-focus {
+            box-shadow: $dangerButtonFocusShadow;
+        }
+
+        &.ui-state-active {
+            background: $dangerButtonActiveBg;
+            color: $dangerButtonTextActiveColor;
+            border-color: $dangerButtonActiveBorderColor;
+        }
+
+        &.outlined-button {
+            background-color: transparent;
+            color: $dangerButtonBg;
+            border: $outlinedButtonBorder;
+    
+            &:enabled:hover {
+                background: rgba($dangerButtonBg, $textButtonHoverBgOpacity);
+                color: $dangerButtonBg;
+                border: $outlinedButtonBorder;
+            }
+    
+            &:enabled:active {
+                background: rgba($dangerButtonBg, $textButtonActiveBgOpacity);
+                color: $dangerButtonBg;
+                border: $outlinedButtonBorder;
+            }
+        }
+    
+        &.text-button {
+            background-color: transparent;
+            color: $dangerButtonBg;
+            border-color: transparent;
+    
+            &:enabled:hover {
+                background: rgba($dangerButtonBg, $textButtonHoverBgOpacity);
+                border-color: transparent;
+                color: $dangerButtonBg;
+            }
+    
+            &:enabled:active {
+                background: rgba($dangerButtonBg, $textButtonActiveBgOpacity);
+                border-color: transparent;
+                color: $dangerButtonBg;
+            }
+        }
+    }
+
+    .ui-commandlink, .ui-link {
+        color: $buttonBg;
+    }
+}

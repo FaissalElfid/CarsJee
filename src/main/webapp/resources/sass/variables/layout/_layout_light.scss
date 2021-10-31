@@ -1,0 +1,18 @@
+$bodyBgColor:#F2F4F6  !default;
+
+//text
+$textShade100:#3E4754 !default;
+$textShade200:rgba(41, 50, 65, 0.8) !default;
+$textShade300:rgba(41, 50, 65, 0.5) !default;
+
+//content
+$contentShade100:#ffffff !default;
+$contentShade200: #F7FAFF !default;
+$contentShade300: #EEF5FF !default;
+$contentShade400: #F7F7F8 !default;
+$dividerColor: #D4D6D9 !default;
+
+$menuTooltipBgColor:#293241!default;
+$menuTooltipTextColor:#ffffff !default;
+
+@import './_layout_common.scss';

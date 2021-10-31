@@ -1,0 +1,20 @@
+.layout-topbar-dark {
+    $topbarBgColor: #293241;
+    $topbarBorderColor: #4D4D4D;
+    $topbarBoxShadow:none;
+
+    $topbarItemTextColor:#E9E9E9;
+    $topbarItemSecondaryTextColor: lighten($primaryColor, 20%);
+    $topbarItemTextHoverBgColor: lighten($topbarBgColor, 5%);
+    $topbarItemBgColor:lighten($topbarBgColor, 5%);
+    $topbarItemBorderColor: lighten($topbarBgColor, 5%);
+    
+    $topbarItemSubmenuItemHoverBgColor:var(--primaryLighterColor);
+
+    $topbarItemSubmenuBgColor: lighten($topbarBgColor, 5%) !default;
+    $topbarItemSubmenuTextColor: #E9E9E9 !default;
+    $topbarItemSubmenuSecondaryTextColor: #C2C2C2 !default;
+    $topbarItemSubmenuBoxShadow: 0 2px 8px 0 rgba(25, 26, 28, 0.12) !default;
+
+    @import '../_topbar_theme';
+}

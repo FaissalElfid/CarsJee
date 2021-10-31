@@ -1,0 +1,29 @@
+.layout-dashboard {
+   .chart{
+       overflow: auto;
+   }
+
+    .mobile-teams {
+        display: none;
+    }
+}
+@media (max-width: 1200px) {
+    .layout-dashboard {
+        .desktop-teams {
+            display: none;
+        }
+    
+        .mobile-teams {
+            display: block;
+            .team {
+                height: 100%;
+                flex-direction: column;
+                @include flex-justify-start();
+                @include flex-align-start();
+                .peoples {
+                    margin: 12px -8px;
+                }
+            }
+        }
+    }
+}

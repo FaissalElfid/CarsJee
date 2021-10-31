@@ -1,0 +1,91 @@
+.layout-footer {
+    padding:30px 36px;
+
+    .footer-menutitle {
+        color:$textShade300;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 14px;
+        min-height: 15px;
+        display: block;
+        margin-bottom: 9px;
+    }
+
+    .footer-subtitle {
+        font-weight: 500;
+        font-size: 14px;
+        display: block;
+        color:$textShade300;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        > li {
+            padding: 7px 0;
+            > a {
+                color: $textShade200;
+                @include transition(color $transitionDuration);
+
+                &:hover {
+                    color:$textShade300;
+                }
+            }
+        }
+    }
+
+    .newsletter-input {
+        margin-top: 16px;
+        background-color: $contentShade100;
+        position: relative;
+        @include border-radius(12px);
+
+        > input {
+            width: 100%;
+            background-color:transparent;
+            border: none;
+            padding: 11px 16px;
+            @include border-radius(12px);
+            font-size: 14px;
+            line-height: 200%;
+        }
+
+        > button {
+            @include border-radius(8px);
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            margin-top:-16px; 
+            padding: 0px;
+
+            > span{
+                display: block;
+                padding: 0;
+                width: 100%;
+                font-weight: 600;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .footer-bottom {
+        @include flex();
+        @include flex-align-center();
+
+        h4 {
+            line-height: 22px;
+            margin: 0;
+            margin-right: 32px;
+        }
+
+        h6 {
+            line-height: 17px;
+            margin: 0;
+            color:$textShade300;
+            font-weight: 500;
+        }
+    }
+  
+}

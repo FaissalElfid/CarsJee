@@ -1,0 +1,106 @@
+.login-body {
+    background:#FFFFFF;
+
+    .login-wrapper {
+        @include flex();
+        @include flex-align-center();
+        @include flex-justify-between();
+        flex-direction: column;
+        height: 100vh;
+        
+        .login-panel {
+            width: 30%;
+            height: 100%;
+            text-align: center;
+            padding: 40px 20px;
+            @include flex();
+            @include flex-direction-column();
+            @include flex-align-center();
+            @include flex-justify-center();
+            flex: 1 1 100%;
+
+            .logo {
+                img {
+                    width: 45px;
+                    height: 53px;
+                }
+                margin-bottom: 50px;
+            }
+            > a {
+                font-weight: 500;
+                font-size: 10px;
+                line-height: 12px;
+                color: rgba(41, 50, 65, 0.3);
+            }
+
+            > p {
+                font-weight: 500;
+                margin: 0;
+                color:rgba(41, 50, 65, 0.5);
+                margin-top: 40px;
+
+                > a {
+                    color: $primaryColor;
+                    cursor: pointer;
+                }
+            }
+
+            > input {
+                width: 85%;
+                max-width: 247px;
+                margin-bottom: 10px;
+                background-color: #F6F7F7;
+                border: 1.2px solid #D4D6D9;
+                color: #515C66;
+                padding: 12px 10px;
+
+                &::placeholder {
+                    color: gba(41, 50, 65, 0.3);
+                }
+            }
+
+            > button {
+                width: 85%;
+                max-width: 247px;
+                margin-bottom: 10px;
+
+                > span {
+                    padding: 15px 20px;
+                    display: block;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 16px;
+                }                
+            }
+        }
+
+        .login-footer {
+            @include flex();
+            @include flex-align-center();
+            padding-bottom: 70px;
+
+            h4 {
+                line-height: 22px;
+                margin: 0;
+                margin-right: 32px;
+            }
+    
+            h6 {
+                line-height: 17px;
+                margin: 0;
+                color:$textShade300;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+@media(max-width:992px) {
+    .login-body {
+        .login-wrapper {
+            .login-panel {
+                width: 100%;
+            }
+        }
+    }
+}

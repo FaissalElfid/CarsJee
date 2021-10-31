@@ -1,0 +1,1534 @@
+body {
+    .ui-paginator {  
+        background: $paginatorBg;
+        border: $paginatorBorder;
+        padding: $paginatorPadding;
+
+        .ui-paginator-first,
+        .ui-paginator-prev,
+        .ui-paginator-next,
+        .ui-paginator-last {            
+            color: $paginatorIconColor;
+            width: $paginatorElementWidth;
+            height: $paginatorElementHeight;
+            margin: $paginatorElementMargin;
+            border: $paginatorElementBorder;
+            vertical-align: top;
+            padding: 0;
+            border-radius: $paginatorElementBorderRadius;
+            transition: $transition;
+            
+            span {
+                display: none;
+            }
+            
+            &.ui-state-hover {
+                background: $paginatorElementHoverBg;
+                color: $paginatorElementHoverIconColor;
+                border-color: $paginatorElementHoverBorderColor;
+            }
+
+            &:before {
+                position: relative;
+                line-height: inherit;
+                top: -1px;
+            }
+        }
+        
+        .ui-paginator-first {
+            @include icon-override("\e92d");
+            line-height: $paginatorElementHeight;
+            
+            &:before {
+                position: relative;
+            }
+        }
+        
+        .ui-paginator-prev {
+            @include icon-override("\e931");
+            line-height: $paginatorElementHeight;
+            
+            &:before {
+                position: relative;
+            }
+        }
+        
+        .ui-paginator-next {
+            @include icon-override("\e932");
+            line-height: $paginatorElementHeight;
+            
+            &:before {
+                position: relative;
+            }
+        }
+        
+        .ui-paginator-last {
+            @include icon-override("\e92e");
+            line-height: $paginatorElementHeight;
+            
+            &:before {
+                position: relative;
+            }
+        }
+
+        .ui-paginator-current {
+            color: $paginatorIconColor;
+        }
+                
+        .ui-paginator-pages {
+            padding: 0;
+            display: inline-block;
+            
+            .ui-paginator-page {
+                padding: 0;
+                border: $paginatorElementBorder;
+                text-align: center;
+                line-height: $paginatorElementHeight;
+                min-width: $paginatorElementWidth;
+                height: $paginatorElementHeight;
+                color: $paginatorIconColor;
+                margin: $paginatorElementMargin;
+                border-radius: $paginatorElementBorderRadius;
+                transition: $transition;
+                
+                &.ui-state-active {
+                    background: $highlightBg;
+                    color: $highlightTextColor;
+                }
+                
+                &.ui-state-hover {
+                    background: $paginatorElementHoverBg;
+                    color: $paginatorElementHoverIconColor;
+                    border-color: $paginatorElementHoverBorderColor;
+                }
+            }
+        }
+        
+        .ui-paginator-current, .ui-paginator-rpp-options {
+            margin: $inlineSpacing;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    .ui-datatable {
+        .ui-datatable-header {
+            background: $panelHeaderBg;
+            border: $datatableHeaderCellBorder;
+            border-width: $datatableHeaderBorderWidth;
+            color: $panelHeaderTextColor;
+            padding: $panelHeaderPadding;
+            font-weight: $panelHeaderFontWeight;
+            @include border-radius-top($borderRadius);  
+        }
+
+        .ui-datatable-footer {
+            background: $panelFooterBg;
+            border: $datatableFooterCellBorder;
+            border-width: $datatableFooterBorderWidth;
+            color: $panelFooterTextColor;
+            padding: $panelFooterPadding;
+            @include border-radius-bottom($borderRadius);  
+        }
+
+        .ui-datatable-header {
+            text-align: left;
+        }
+
+        .ui-datatable-footer {
+            text-align: left;
+        }
+
+        .ui-paginator {
+            padding: $paginatorPadding;
+        }
+
+        thead {
+            th {
+                background: $datatableHeaderCellBg;
+                color: $datatableHeaderCellTextColor;
+                padding: $datatableHeaderCellPadding;
+                border: $datatableHeaderCellBorder;
+                border-width: $datatableHeaderCellBorderWidth;
+                text-align: left;
+                box-sizing: content-box;
+                transition: $transition;
+
+                .ui-column-title {
+                    font-weight: $datatableHeaderCellFontWeight;
+                    vertical-align: middle;
+                }
+
+                .ui-sortable-column-icon {
+                    margin: 0 0 0 $inlineSpacing;
+
+                    &.ui-icon-carat-2-n-s {
+                        @include icon_override('\e99e');
+                        vertical-align: middle;
+                    }
+
+                    &.ui-icon-triangle-1-n {
+                        @include icon_override('\e99f');
+                        vertical-align: middle;
+                    }
+
+                    &.ui-icon-triangle-1-s {
+                        @include icon_override('\e9a0');
+                        vertical-align: middle;
+                    }
+                }
+
+                &.ui-sortable-column {
+                    &.ui-state-focus {
+                        @include focused-inset();
+                    }
+                }
+                
+                &.ui-state-hover {
+                    background: $datatableHeaderCellHoverBg;
+                    color: $datatableHeaderCellTextHoverColor;
+                }
+
+                &.ui-state-active {
+                    color: $highlightBg;
+                }
+            }
+        }
+
+        .ui-datatable-data {
+            > tr {
+                background: $datatableBodyRowBg;
+                color: $datatableBodyRowTextColor;
+                transition: $transition;
+
+                > td {
+                    padding: $datatableBodyCellPadding;
+                    border: $datatableBodyRowBorder;
+                    border-width: $datatableHeaderCellBorderWidth;
+
+                    &.ui-datatable-subtable-header {
+                        background: $panelHeaderBg;
+                        border: $panelHeaderBorder;
+                        color: $panelHeaderTextColor;
+                        font-weight: $panelHeaderFontWeight;
+                    }
+                }
+
+                &.ui-state-hover {
+                    background: $datatableBodyRowHoverBg;
+                    color: $datatableBodyRowTextHoverColor;
+                }
+
+                &.ui-state-highlight {
+                    background: $highlightBg;
+                    color: $highlightTextColor;
+
+                    .ui-row-toggler {
+                        color: $highlightTextColor;
+                    }
+
+                    .ui-row-editor {
+                        > a {
+                            color: $highlightTextColor;
+                        }
+                    }
+                }
+
+                &.ui-datatable-selectable {
+                    cursor: pointer;
+                }
+
+                &.ui-rowgroup-header, &.ui-datatable-summaryrow  {
+                    font-weight: 700;
+                }
+
+                .ui-row-editor {
+                    > a {
+                        @include action-icon();
+
+                        &.ui-row-editor-check {
+                            margin-right: $inlineSpacing;
+                        }
+                    }
+
+                    .ui-icon {
+                        &.ui-icon-pencil {
+                            @include icon_override('\e942');
+                        }
+            
+                        &.ui-icon-check {
+                            @include icon_override('\e909');
+                        }
+            
+                        &.ui-icon-close {
+                            @include icon_override('\e90b');
+                        }
+                    }
+                }
+        
+                .ui-row-toggler {
+                    @include action-icon();
+        
+                    &.ui-icon-circle-triangle-e {
+                        @include icon_override('\e901');
+                    }
+        
+                    &.ui-icon-circle-triangle-s {
+                        @include icon_override('\e902');
+                    }
+                }
+
+                .ui-rowgroup-toggler {
+                    margin-right: 2 * $inlineSpacing;
+
+                    .ui-rowgroup-toggler-icon {   
+                        @include action-icon();
+
+                        &.ui-icon-circle-triangle-e {
+                            @include icon_override('\e901');
+                        }
+            
+                        &.ui-icon-circle-triangle-s {
+                            @include icon_override('\e902');
+                        }
+                    }
+                }
+
+                &.ui-datatable-rowordering {
+                    background: $highlightBg;
+                }
+            }
+        }
+
+        .ui-column-resizer-helper {
+            background: $datatableResizerHelperBg;
+        }
+
+        tfoot {
+            td {
+                background: $datatableFooterCellBg;
+                border: $datatableFooterCellBorder;
+                border-width: $datatableFooterCellBorderWidth;
+                color: $datatableFooterCellTextColor;
+                padding: $datatableFooterCellPadding;
+                font-weight: $datatableFooterCellFontWeight;
+                box-sizing: content-box;;
+            }
+        }
+
+        > .ui-icon-arrowthick-1-s {
+            @include icon_override('\e919');
+            display: none !important;
+        }
+
+        > .ui-icon-arrowthick-1-n {
+            @include icon_override('\e91c');
+            padding-top: 1.5rem !important;
+        }
+
+        .ui-datatable-scrollable-body {
+            outline: 0 none;
+        }
+
+        .ui-datatable-scrollable-header, .ui-datatable-scrollable-footer {
+            background: $datatableHeaderCellBg;
+        }
+
+        .ui-selection-column {
+            .ui-chkbox-all {
+                width: auto;
+                height: auto;
+            }
+        }
+
+        &.ui-datatable-striped {
+            .ui-datatable-data {
+                > tr {
+                    &.ui-datatable-odd {
+                        background: $datatableBodyRowOddBg;
+
+                        &.ui-state-hover {
+                            background: $datatableBodyRowHoverBg;
+                            color: $datatableBodyRowTextHoverColor;
+                        }
+
+                        &.ui-state-highlight {
+                            background: $highlightBg;
+                            color: $highlightTextColor;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.ui-datatable-sm {
+            thead {
+                > tr {
+                    > th {
+                        padding: $datatableHeaderCellPadding * $datatableScaleSm;
+                    }
+                }
+            }
+
+           .ui-datatable-scrollable-theadclone {
+                > tr {
+                    > th {
+                        padding-top: 0;
+                        padding-bottom: 0;
+                    }
+                }
+            }
+
+            .ui-datatable-data {
+                > tr {
+                    > td {
+                        padding: $datatableBodyCellPadding * $datatableScaleSm;
+                    }
+                }
+            }
+
+            tfoot {
+                > tr {
+                    > td {
+                        padding: $datatableFooterCellPadding * $datatableScaleSm;
+                    }
+                }
+            }
+        }
+
+        &.ui-datatable-gridlines {
+            .ui-datatable-header {
+                border-width: 1px;
+            }
+
+            thead {
+                > tr {
+                    > th {
+                        border-width: 1px;
+                    }
+                }
+            }
+
+            .ui-datatable-data {
+                > tr {
+                    > td {
+                        border-width: 1px;
+                    }
+                }
+            }
+
+            .ui-datatable-scrollable-theadclone {
+                > tr {
+                    > th {
+                        padding-top: 0;
+                        padding-bottom: 0;
+                        border-bottom: 0 none;
+                        border-top: 0 none;
+                    }
+                }
+            }
+
+            tfoot {
+                > tr {
+                    > td {
+                        border-width: 1px;
+                    }
+                }
+            }
+        }
+
+        &.ui-datatable-sticky {
+            box-shadow: $overlayContainerShadow;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .ui-datatable-reflow .ui-datatable-data tr {
+            border-bottom: $datatableBodyRowBorder;
+
+            &:hover, &.ui-state-highlight {
+                border-left: 0 none;
+                border-right: 0 none;
+                border-bottom: $datatableBodyRowBorder;
+            }
+
+            &.ui-expanded-row-content {
+                > td {
+                    display: block;
+                    width: 100%;
+                }
+                
+            }
+        }
+    }
+
+    .ui-dataview {
+        .ui-dataview-header,
+        .ui-dataview-footer {
+            background: $panelHeaderBg;
+            color: $panelHeaderTextColor;
+            padding: $panelHeaderPadding;
+            font-weight: $panelHeaderFontWeight;
+            border: $panelHeaderBorder;
+        }
+
+        .ui-dataview-header {
+            border-width: 0 0 1px 0;
+        }
+
+        .ui-dataview-footer {
+            border-width: 1px 0 0 0;
+        }
+
+        .ui-dataview-content {
+            border: 0 none;
+            background: $panelContentBg;
+            color: $panelContentTextColor;
+            padding: $panelContentPadding;
+        }
+
+        &.ui-dataview-list {
+            .ui-dataview-row {
+                border-bottom: $panelContentBorder;
+
+                &:last-child {
+                    border-bottom: 0 none;
+                }
+            }
+        }
+    }
+
+    .ui-datagrid {
+        .ui-datagrid-header,
+        .ui-datagrid-footer {
+            background: $panelHeaderBg;
+            border: $panelHeaderBorder;
+            color: $panelHeaderTextColor;
+            padding: $panelHeaderPadding;
+            font-weight: $panelHeaderFontWeight;
+        }
+
+        .ui-datagrid-header {
+            border-bottom: 0 none;
+        }
+
+        .ui-datagrid-footer {
+            border-top: 0 none;
+        }
+
+        .ui-datagrid-content {
+            border: $panelContentBorder;
+            background: $panelContentBg;
+            color: $panelContentTextColor;
+            padding: $panelContentPadding;
+        }
+
+        .ui-paginator {
+            padding: $paginatorPadding;
+
+            &.ui-paginator-top {
+                border-bottom: 0 none;
+            }
+
+            &.ui-paginator-bottom {
+                border-top: 0 none;
+            }
+        }
+    }
+
+    .ui-datalist {
+        .ui-datalist-header,
+        .ui-datalist-footer {
+            background: $panelHeaderBg;
+            border: $panelHeaderBorder;
+            color: $panelHeaderTextColor;
+            padding: $panelHeaderPadding;
+            font-weight: $panelHeaderFontWeight;
+        }
+
+        .ui-datalist-header {
+            border-bottom: 0 none;
+        }
+
+        .ui-datalist-footer {
+            border-top: 0 none;
+        }
+
+        .ui-datalist-content {
+            border: $panelContentBorder;
+            background: $panelContentBg;
+            color: $panelContentTextColor;
+            padding: $panelContentPadding;
+        }
+
+        .ui-paginator {
+            padding: $paginatorPadding;
+
+            &.ui-paginator-top {
+                border-bottom: 0 none;
+            }
+
+            &.ui-paginator-bottom {
+                border-top: 0 none;
+            }
+        }
+    }
+
+    .ui-datascroller {
+        .ui-datascroller-header,
+        .ui-datascroller-footer {
+            background: $panelHeaderBg;
+            border: $panelHeaderBorder;
+            color: $panelHeaderTextColor;
+            padding: $panelHeaderPadding;
+            font-weight: $panelHeaderFontWeight;
+        }
+
+        .ui-datascroller-header {
+            border-bottom: 0 none;
+        }
+
+        .ui-datascroller-footer {
+            border-top: 0 none;
+        }
+
+        .ui-datascroller-content {
+            border: $panelContentBorder;
+            background: $panelContentBg;
+            color: $panelContentTextColor;
+            padding: $panelContentPadding;
+        }
+    }
+
+    .ui-picklist {
+        .ui-picklist-buttons {
+            padding: 0 $inlineSpacing 0 $inlineSpacing;
+
+            .ui-button {
+                margin-bottom: $inlineSpacing;
+            }            
+            
+            .ui-icon-arrow-1-n {
+                @include icon-override("\e933");
+            }
+            
+            .ui-icon-arrowstop-1-n {
+                @include icon-override("\e92f");
+            }
+            
+            .ui-icon-arrow-1-s {
+                @include icon-override("\e930");
+            }
+            
+            .ui-icon-arrowstop-1-s {
+                @include icon-override("\e92c");
+            }
+            
+            .ui-icon-arrow-1-e {
+                @include icon-override("\e932");
+            }
+            
+            .ui-icon-arrowstop-1-e {
+                @include icon-override("\e92e");
+            }
+            
+            .ui-icon-arrow-1-w {
+                @include icon-override("\e931");
+            }
+            
+            .ui-icon-arrowstop-1-w {
+                @include icon-override("\e92d");
+            }
+        }
+        
+        .ui-picklist-caption {
+            background: $panelHeaderBg;
+            border: $panelHeaderBorder;
+            color: $panelHeaderTextColor;
+            padding: $panelHeaderPadding;
+            border-bottom: 0 none;
+            font-weight: $panelHeaderFontWeight;
+            @include border-radius-top($borderRadius);
+        }
+        
+        .ui-picklist-filter-container {
+            .ui-picklist-filter {
+                padding: $inputPadding;
+                width: 100%;
+                padding-left: 2 * nth($inputPadding, 2) + $iconSize;
+                margin-bottom: $inlineSpacing;
+            }
+            
+            .ui-icon {
+                @include icon_override("\e908");
+                position: absolute;
+                left: nth($inputPadding, 2);
+                top: 50%;
+                margin-top: -1 * $iconSize / 2 - $inlineSpacing / 2;
+                color: $inputIconColor;
+            }
+        }
+        
+        .ui-picklist-list {
+            border: $panelContentBorder;
+            background: $panelContentBg;
+            color: $panelContentTextColor;
+            padding: $inputListPadding;
+            @include border-radius-bottom($borderRadius);
+
+            .ui-picklist-item {
+                padding: $inputListItemPadding;
+                border: $inputListItemBorder;
+                margin: $inputListItemMargin;
+                color: $inputListItemTextColor;
+                border-radius: $inputListItemBorderRadius;
+                transition: $transition;
+                
+                &.ui-state-hover {
+                    background: $inputListItemHoverBg;
+                    color: $inputListItemTextHoverColor;
+                }
+
+                &.ui-state-highlight {
+                    background: $inputListItemHighlightBg;
+                    color: $inputListItemHighlightTextColor;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 640px) {
+        .ui-picklist {
+            .ui-picklist-buttons {
+                .ui-button {
+                    margin-top: $inlineSpacing;
+                    margin-right: $inlineSpacing;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    .ui-icon-arrow-1-e {
+                        @include icon-override("\e930");
+                    }
+                    
+                    .ui-icon-arrowstop-1-e {
+                        @include icon-override("\e92c");
+                    }
+                    
+                    .ui-icon-arrow-1-w {
+                        @include icon-override("\e933");
+                    }
+                    
+                    .ui-icon-arrowstop-1-w {
+                        @include icon-override("\e92f");
+                    }
+                }
+            }
+
+            &.ui-picklist-responsive > div.ui-helper-hidden-accessible {
+                display: none;
+            }
+        }
+    }
+
+    .ui-orderlist {
+        .ui-orderlist-controls {
+            margin-right: 0;  
+            @include flex();
+            @include flex-direction-column();
+            @include flex-align-center();
+            @include flex-justify-center();  
+            
+            .ui-button {
+                margin-bottom: $inlineSpacing;
+            }
+            
+            .ui-icon-arrow-1-n {
+                @include icon-override("\e933");
+            }
+            
+            .ui-icon-arrowstop-1-n {
+                @include icon-override("\e92f");
+            }
+            
+            .ui-icon-arrow-1-s {
+                @include icon-override("\e930");
+            }
+            
+            .ui-icon-arrowstop-1-s {
+                @include icon-override("\e92c");
+            }
+        }
+        
+        .ui-orderlist-caption {
+            background: $panelHeaderBg;
+            border: $panelHeaderBorder;
+            color: $panelHeaderTextColor;
+            padding: $panelHeaderPadding;
+            border-bottom: 0 none;
+            font-weight: $panelHeaderFontWeight;
+            @include border-radius-top($borderRadius);
+        }
+
+        .ui-g {
+            > div {
+                padding: 0;
+
+                &.ui-orderlist-controls {
+                    padding: 0 $inlineSpacing 0 0;
+                }
+            }            
+        }
+        
+        .ui-orderlist-list {   
+            border: $panelContentBorder;
+            background: $panelContentBg;
+            color: $panelContentTextColor;
+            padding: $inputListPadding;
+            @include border-radius-bottom($borderRadius);
+                     
+            .ui-orderlist-item {
+                padding: $inputListItemPadding;
+                margin: $inputListItemMargin;
+                border: $inputListItemBorder;
+                color: $inputListItemTextColor;
+                border-radius: $inputListItemBorderRadius ;
+                transition: $transition;
+                
+                &.ui-state-hover {
+                    background: $inputListItemHoverBg;
+                    color: $inputListItemTextHoverColor;
+                }
+
+                &.ui-state-highlight {
+                    background: $inputListItemHighlightBg;
+                    color: $inputListItemHighlightTextColor;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 640px) {
+        .ui-orderlist {
+            &.ui-grid-responsive {
+                .ui-orderlist-controls {
+                    @include flex-direction-row();
+                    .ui-button {
+                        margin-top: $inlineSpacing;
+                        margin-right: $inlineSpacing;
+                    }
+                }
+            }
+        }
+    }
+
+    .ui-treetable {
+        .ui-treetable-header {
+            background: $panelHeaderBg;
+            border: $datatableHeaderCellBorder;
+            border-width: $datatableHeaderBorderWidth;
+            color: $panelHeaderTextColor;
+            padding: $panelHeaderPadding;
+            font-weight: $panelHeaderFontWeight;
+        }
+
+        .ui-treetable-footer {
+            background: $panelFooterBg;
+            border: $datatableFooterCellBorder;
+            border-width: $datatableFooterBorderWidth;
+            color: $panelFooterTextColor;
+            padding: $panelFooterPadding;
+        }
+
+        .ui-treetable-header {
+            text-align: left;
+        }
+
+        .ui-treetable-footer {
+            text-align: left;
+        }
+
+        .ui-paginator {
+            padding: $paginatorPadding;
+        }
+
+        thead {
+            th {
+                background: $datatableHeaderCellBg;
+                color: $datatableHeaderCellTextColor;
+                padding: $datatableHeaderCellPadding;
+                border-bottom: $datatableHeaderCellBorder;
+                border-width: $datatableHeaderCellBorderWidth;
+                text-align: left;
+                box-sizing: content-box;;
+                transition: $transition;
+
+                .ui-column-title {
+                    font-weight: $datatableHeaderCellFontWeight;
+                    vertical-align: middle;
+                }
+
+                .ui-sortable-column-icon {
+                    margin: 0 0 0 $inlineSpacing;
+                    
+                    &.ui-icon-carat-2-n-s {
+                        @include icon_override('\e99e');
+                        vertical-align: middle;
+                    }
+
+                    &.ui-icon-triangle-1-n {
+                        @include icon_override('\e99f');
+                        vertical-align: middle;
+                    }
+
+                    &.ui-icon-triangle-1-s {
+                        @include icon_override('\e9a0');
+                        vertical-align: middle;
+                    }
+                }
+                
+                &.ui-sortable-column {
+                    &.ui-state-focus {
+                        @include focused-inset();
+                    }
+                }
+                
+                &.ui-state-hover {
+                    background: $datatableHeaderCellHoverBg;
+                    color: $datatableHeaderCellTextHoverColor;
+                }
+
+                &.ui-state-active {
+                    color: $highlightBg;
+                }
+            }
+        }
+
+        .ui-treetable-data {
+            > tr {
+                background: $datatableBodyRowBg;
+                color: $datatableBodyRowTextColor;
+                transition: $transition;
+
+                > td {
+                    padding: $datatableBodyCellPadding;
+                    border: $datatableBodyRowBorder;
+                    border-width: $datatableHeaderCellBorderWidth;
+
+                    .ui-treetable-toggler {
+                        margin-right: $inlineSpacing;
+                        margin-top: 0;
+                        transition: $transition;
+                        @include action-icon();
+
+                        &.ui-icon-triangle-1-e {
+                            @include icon_override("\e901");
+                        }
+
+                        &.ui-icon-triangle-1-s {
+                            @include icon_override("\e902");
+                        }
+                    }
+
+                    .ui-chkbox.ui-selection {
+                        vertical-align: middle;
+                        margin-right: $inlineSpacing * 2;
+
+                        .ui-icon-minus {
+                            @include icon_override("\e90f");
+                        }
+
+                        .ui-icon-check {
+                            color: $datatableBodyRowTextColor;
+                        }
+                    }
+                }
+
+                &.ui-state-hover {
+                    background: $datatableBodyRowHoverBg;
+                    color: $datatableBodyRowTextHoverColor;
+                }
+
+                &.ui-state-highlight {
+                    background: $highlightBg;
+                    color: $highlightTextColor;
+                    cursor: default;
+
+                    .ui-treetable-toggler {
+                        color: $highlightTextColor;
+
+                        &:hover {
+                            color: $highlightTextColor;
+                        }
+                    }
+                }
+
+                .ui-row-editor {
+                    .ui-icon {
+                        @include action-icon();
+        
+                        &.ui-icon-pencil {
+                            @include icon_override('\e942');
+                        }
+            
+                        &.ui-icon-check {
+                            @include icon_override('\e909');
+                            margin-right: $inlineSpacing;
+                        }
+            
+                        &.ui-icon-close {
+                            @include icon_override('\e90b');
+                        }
+                    }
+
+                    .ui-row-editor-check {
+                        display: none;
+                    }
+
+                    .ui-row-editor-close {
+                        display: none;
+                    }
+                }
+
+                &.ui-row-editing {
+                    .ui-row-editor-check {
+                        display: inline-block;
+                    }
+
+                    .ui-row-editor-close {
+                        display: inline-block;
+                        color:$highlightTextColor;
+                    }
+
+                    .ui-icon {
+                        color:$highlightTextColor;
+                    }
+                }
+            }
+        }
+
+        tfoot {
+            td {
+                background: $datatableFooterCellBg;
+                border: $datatableFooterCellBorder;
+                border-width: $datatableFooterCellBorderWidth;
+                color: $datatableFooterCellTextColor;
+                padding: $datatableFooterCellPadding;
+                font-weight: $datatableFooterCellFontWeight;
+                box-sizing: content-box;;
+            }
+        }
+
+        .ui-treetable-scrollable-header, .ui-treetable-scrollable-footer {
+            background: $datatableHeaderCellBg;
+        }
+
+        .ui-column-resizer-helper {
+            background: $datatableResizerHelperBg;
+        }
+
+        &.ui-treetable-sm {
+            thead {
+                > tr {
+                    > th {
+                        padding: $datatableHeaderCellPadding * $datatableScaleSm;
+                    }
+                }
+            }
+
+           .ui-treetable-scrollable-theadclone {
+                > tr {
+                    > th {
+                        padding-top: 0;
+                        padding-bottom: 0;
+                    }
+                }
+            }
+
+            .ui-treetable-data {
+                > tr {
+                    > td {
+                        padding: $datatableBodyCellPadding * $datatableScaleSm;
+                    }
+                }
+            }
+
+            tfoot {
+                > tr {
+                    > td {
+                        padding: $datatableFooterCellPadding * $datatableScaleSm;
+                    }
+                }
+            }
+        }
+
+        &.ui-treetable-gridlines {
+            .ui-treetable-header {
+                border-width: 1px;
+            }
+
+            thead {
+                > tr {
+                    > th {
+                        border-width: 1px;
+                    }
+                }
+            }
+
+            .ui-treetable-data {
+                > tr {
+                    > td {
+                        border-width: 1px;
+                    }
+                }
+            }
+
+            .ui-treetable-scrollable-theadclone {
+                > tr {
+                    > th {
+                        padding-top: 0;
+                        padding-bottom: 0;
+                        border-bottom: 0 none;
+                        border-top: 0 none;
+                    }
+                }
+            }
+
+            tfoot {
+                > tr {
+                    > td {
+                        border-width: 1px;
+                    }
+                }
+            }
+        }
+    }
+
+    .ui-carousel {
+        padding: 0;
+        
+        .ui-carousel-header {
+            background: $panelHeaderBg;
+            color: $panelHeaderTextColor;
+            padding: $panelHeaderPadding;
+            border: $panelHeaderBorder;
+            margin: 0;
+            font-weight: $panelHeaderFontWeight;
+            
+            .ui-carousel-header-title {
+                padding: 0;
+                width: auto;
+            }
+        }
+        
+        .ui-carousel-footer {
+            background: $panelHeaderBg;
+            color: $panelHeaderTextColor;
+            padding: $panelHeaderPadding;
+            border: $panelHeaderBorder;
+            margin: 0;
+        }
+
+        .ui-carousel-viewport {
+            border: $panelContentBorder;
+            background: $panelContentBg;
+            color: $panelContentTextColor;
+            padding: 0;
+
+            .ui-carousel-item {
+                border: $panelContentBorder;
+            }
+        }
+        
+        .ui-carousel-button {
+            margin: 0 0 0 $inlineSpacing;
+            position: relative;
+            top: 0.143em;
+            @include action-icon();
+            
+            &.ui-carousel-next-button {
+                @include icon-override("\e901");
+            }
+            
+            &.ui-carousel-prev-button {
+                @include icon-override("\e900");
+            }
+        }
+
+        .ui-carousel-dropdown, .ui-carousel-mobiledropdown {
+            margin: 0 $inlineSpacing 0 0;
+        }
+        
+        .ui-carousel-page-links {     
+            margin: 0 $inlineSpacing;
+            position: relative;
+            top: 0.143em;
+
+            .ui-carousel-page-link {
+                @include action-icon();
+                text-decoration: none;
+
+                &.ui-icon-radio-off {
+                    @include icon_override("\e912");
+                }
+    
+                &.ui-icon-radio-on {
+                    @include icon_override("\e911");
+                    color: $highlightBg;
+                }
+            }
+        }
+    }
+
+    .ui-tree {
+        border: $panelContentBorder;
+        background: $panelContentBg;
+        color: $panelContentTextColor;
+        padding: $panelContentPadding;
+        width: 100%;
+        border-radius: $borderRadius;
+
+        .ui-tree-container {
+            padding: 0;
+            margin: 0;
+
+            .ui-treenode {
+                padding: $treeNodePadding;
+                
+                .ui-treenode-content {     
+                    @include flex();
+                    @include flex-align-center();
+
+                    .ui-tree-toggler {
+                        display: inline-block;
+                        float: none;
+                        margin: 0 $inlineSpacing 0 0;
+                        transition: $transition;
+                        @include action-icon();
+                        
+                        &.ui-icon-triangle-1-e {
+                            @include icon_override("\e901");
+                        }
+            
+                        &.ui-icon-triangle-1-s {
+                            @include icon_override("\e902");
+                        }
+
+                        &.ui-icon-triangle-1-w {
+                            @include icon_override("\e904");
+                        }
+                    }
+                    
+                    .ui-treenode-leaf-icon {
+                        width: $actionIconWidth;
+                        height: $actionIconHeight;
+                        margin: 0 $inlineSpacing 0 0;
+                    }
+                    
+                    .ui-treenode-icon {
+                        margin: 0 $inlineSpacing 0 0;
+                    }
+                    
+                    .ui-treenode-label {
+                        margin: 0;
+                        padding: $treeNodeLabelPadding;
+                        border-radius: $borderRadius;
+                        
+                        &.ui-state-hover {
+                            background: $inputListItemHoverBg;
+                            color: $inputListItemTextHoverColor;
+                        }
+        
+                        &.ui-state-highlight {
+                            background: $inputListItemHighlightBg;
+                            color: $inputListItemHighlightTextColor;
+                        }
+                    }
+                    
+                    .ui-chkbox {
+                        margin-right: $inlineSpacing * 2;
+
+                        .ui-icon-minus {
+                            @include icon_override("\e90f");
+                        }
+                    }
+                }
+            }
+            
+            .ui-tree-droppoint {
+                &.ui-state-hover {
+                    background: $highlightBg;
+                }
+            }
+        } 
+        
+        &.ui-tree-horizontal {
+            padding-left: 0;
+            padding-right: 0;
+            
+            .ui-treenode-content {
+                border: $panelContentBorder;
+                background: $panelContentBg;
+                color: $panelContentTextColor;
+                padding: $panelContentPadding;
+                border-radius: $borderRadius;
+                
+                &.ui-state-hover {
+                    background: $inputListItemHoverBg;
+                    color: $inputListItemTextHoverColor;
+                }
+
+                &.ui-state-highlight {
+                    background: $inputListItemHighlightBg;
+                    color: $inputListItemHighlightTextColor;
+
+                    .ui-chkbox-icon {
+                        color: $panelContentTextColor;
+                    }
+                }
+
+                .ui-tree-toggler {
+                    margin-right: $inlineSpacing;
+                    vertical-align: middle;
+
+                    &.ui-icon-minus {
+                        @include icon_override("\e90f");
+                    } 
+        
+                    &.ui-icon-plus {
+                        @include icon_override("\e90d");
+                    }
+                }
+
+                .ui-treenode-icon {
+                    vertical-align: middle;
+                    margin-right: $inlineSpacing;
+                }
+
+                .ui-treenode-label {
+                    padding: 0;
+                    vertical-align: middle;
+                }
+            }
+        }
+        
+        .ui-tree-filter-container {
+            margin: 0 0 $inlineSpacing 0;
+
+            .ui-icon {
+                @include icon_override("\e908");
+                position: absolute;
+                left: nth($inputPadding, 2);
+                top: 50%;
+                right: auto;
+                bottom: auto;
+                margin-top: -1 * $iconSize / 2;
+                color: $inputIconColor;
+            }
+            
+            .ui-inputfield {
+                padding: $inputPadding;
+                width: 100%;
+                padding-left: 2 * nth($inputPadding, 2) + $iconSize;
+            }
+        }
+
+        &.ui-tree-rtl {
+            .ui-tree-container {    
+                .ui-treenode {                    
+                    .ui-treenode-content {     
+                        .ui-tree-toggler {
+                            margin-right: 0;
+                            margin-left: $inlineSpacing;
+                        }                               
+
+                        .ui-treenode-leaf-icon {
+                            margin: 0 0 0 $inlineSpacing;
+                        }
+                        
+                        .ui-treenode-icon {
+                            margin: 0 0 0 $inlineSpacing;
+                        }
+                        
+                        .ui-chkbox {
+                            margin-right: 0;
+                            margin-left: $inlineSpacing + 2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .ui-tree-draghelper {
+        border: 1px solid $highlightBg;
+    }
+
+    .ui-fluid {
+        .ui-tree {
+            width: 100%;
+        }
+    }
+
+    .fc {
+        th {
+            background: $panelHeaderBg;
+            border: $panelHeaderBorder;
+            color: $panelHeaderTextColor;
+            padding: $panelHeaderPadding;
+        }
+
+        td {
+            &.fc-widget-content {
+                background: $panelContentBg;
+                border: $panelContentBorder;
+                color: $panelContentTextColor;
+            }
+
+            &.fc-head-container {
+                border: $panelHeaderBorder;
+            }
+        }
+
+        .fc-event {
+            background: $scheduleEventBg;
+            border: $scheduleEventBorder;
+            color: $scheduleEventTextColor;
+        }
+
+        .fc-toolbar {
+            .fc-button {
+                background: $buttonBg;
+                color: $buttonTextColor;
+                border: $buttonBorder;
+                transition: $transition;
+
+                &:not(:disabled):hover {
+                    background: $buttonHoverBg;
+                    border-color: $buttonHoverBorderColor;
+                    color: $buttonTextHoverColor;
+                }
+        
+                &:focus {
+                    outline: $buttonFocusOutline;
+                    outline-offset: $buttonFocusOutlineOffset;
+                    box-shadow: $buttonFocusShadow;
+                }
+
+                &:active, &.fc-button-active {
+                    background: $buttonActiveBg;
+                    border-color: $buttonActiveBorderColor;
+                    color: $buttonTextActiveColor;
+                }
+            }
+        }
+
+        .fc-divider {
+            background: $panelHeaderBg;
+            border: $panelHeaderBorder;
+        }
+    }
+
+    .ui-fluid {
+        .fc {
+            .fc-toolbar {
+                .ui-button {
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    .ui-tagcloud {
+        border: $panelContentBorder;
+        background: $panelContentBg;
+        color: $panelContentTextColor;
+        padding: $panelContentPadding;
+
+        a {
+            color: $inputListItemTextColor;
+            border-radius: $borderRadius;
+            transition: $transition;
+
+            &.ui-state-hover {
+                background: $inputListItemHighlightBg;
+                color: $inputListItemHighlightTextColor;
+            }
+        }
+    }
+
+    .ui-columntoggler {
+        box-shadow: $overlayContainerShadow;
+        background: $inputListBg;
+        border: $inputListBorder;
+
+        .ui-columntoggler-close {
+            display: none;
+        }
+
+        .ui-columntoggler-items {
+            padding: $inputListPadding;
+            
+            .ui-columntoggler-item {
+                padding: $inputListItemPadding;
+                margin: $inputListItemMargin;
+                border: $inputListItemBorder;
+                background: $inputListItemBg;
+                color: $inputListItemTextColor;
+                border-radius: $inputListItemBorderRadius;
+
+                .ui-chkbox {
+                    position: static;
+                    margin-right: $inlineSpacing;
+                    margin-top: 0;
+                    vertical-align: middle; 
+                }
+
+                label {
+                    padding: 0;
+                    display: inline;
+                }
+            }
+        }
+    }
+
+    .timeline-frame {
+        border: $panelContentBorder;
+        background: $panelContentBg;
+        color: $panelContentTextColor;
+
+        .timeline-navigation {
+            @include action-icon();
+
+            .ui-icon {
+                &.ui-icon-circle-zoomin {
+                    @include icon_override("\e98f");
+                }
+    
+                &.ui-icon-circle-zoomout {
+                    @include icon_override("\e990");
+                }
+    
+                &.ui-icon-circle-arrow-w {
+                    @include icon_override("\e91f");
+                }
+    
+                &.ui-icon-circle-arrow-e {
+                    @include icon_override("\e920");
+                }
+            }
+        }
+
+        .timeline-event {
+            border: $panelContentBorder;
+            background: $panelContentBg;
+            color: $panelContentTextColor;
+
+            &.ui-state-active {
+                background: $highlightBg;
+                color: $highlightTextColor;
+            }
+        }
+    }
+}

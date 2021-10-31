@@ -1,0 +1,203 @@
+.layout-rightpanel {
+    position: fixed;
+    z-index: 1000;
+    right: 0;
+    top: 62px;
+    height: calc(100% - 62px);
+    padding: 0;
+    width:418px;
+    overflow: auto;
+    background-color:$contentShade200;
+    transform: translate3d(418px, 0px, 0px);
+    @include transition(transform $transitionDuration);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    box-shadow: 0px 10px 40px rgba(41, 50, 65, 0.06);
+
+    .rightpanel-wrapper {
+        padding: 22px 20px 40px;
+
+        .rightpanel-section  {
+            padding: 16px 0;
+
+            .section-header {
+                @include flex();
+                @include flex-align-center();
+                @include flex-justify-between();
+                margin-bottom: 16px;
+
+                > h6 {
+                    margin: 0;
+                }
+            }
+          
+            &.weather-section {
+                .weather {
+                    @include flex();
+                    @include flex-align-center();
+                    padding: 14px 16px;
+                    background-image: url("\#{resource['demo:images/rightpanel/asset-weather.png']}");
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    @include border-radius(8px);
+                    @include shadow(0px 10px 40 rgba(#293241,0.06));
+                    color: rgba(#293241,0.8);
+
+                    > img {
+                        height: 60px;
+                    }
+
+                    .weather-info {
+                        margin-left: 16px;
+                        h6 {
+                            margin: 0 0 2px;
+                        }
+                        h1 {
+                            margin: 0;
+                        }
+                    }
+                }
+                
+            }
+
+            &.tasks-section {
+                > ul {
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                    overflow: auto;
+                    max-height: 320px;
+
+                    > li {
+                        padding: 16px;
+                        @include border-radius(8px);
+                        background-color: $contentShade100;
+                        margin-bottom: 12px;
+                        @include flex();
+                        @include flex-align-center();
+                        @include flex-justify-between();
+
+                        .task-info {
+                            h6 {
+                                color: $textShade100;
+                                margin: 0 0 4px;
+                            }
+    
+                            > span {
+                                display: block;
+                                font-weight: 500;
+                                font-size: 14px;
+                                line-height: 140%;
+                                color: $textShade300;
+                            }
+                        }
+
+                        &.done {
+                            opacity: 0.5;
+                            .task-info {
+                                h6 {
+                                    text-decoration: line-through;
+                                }
+                            }
+                        }
+                     
+                    }
+                }
+            }
+
+            &.favorites-section {
+                .favorite-items {
+                    @include flex();
+                    @include flex-align-center();
+                    flex-wrap: wrap;
+                    margin: -7px;
+
+                    .favorite-item {
+                        @include flex-center();
+                        @include border-radius(12px);
+                        box-shadow: 0px 0px 1px rgba(41, 50, 65, 0.5), 0px 1px 1px rgba(41, 50, 65, 0.2);
+                        width: 80px;
+                        height: 80px;
+                        background-color:$contentShade100;
+                        margin: 7px;
+                        @include transition(background-color $transitionDuration);
+
+                        &:hover {
+                            background-color:$contentShade400;
+                        }
+                    }
+                    .add-item {
+                        @include flex-center();
+                        @include border-radius(12px);
+                        width: 80px;
+                        height: 80px;
+                        margin: 7px;
+                        border: 1px dashed $dividerColor;
+                        color:$dividerColor;
+                        @include transition(background-color $transitionDuration);
+
+                        &:hover {
+                            background-color:$contentShade400;
+                        }
+                    }
+                }
+            }
+
+            &.chat-section {
+                margin-top: 40px;
+                .ui-tabs.ui-tabs-top {
+                    .ui-tabs-panels {
+                        .ui-tabs-panel {
+                            height: 400px;
+                            .chat {
+                                height: 400px;
+
+                                .fade {
+                                    background-image: linear-gradient(180deg, $contentShade200 0%, rgba(234, 237, 243, 0) 100%);
+                                }
+
+                                .chat-content {
+                                    max-height: 400px;
+                                    .chat-message {
+                                        .message {
+                                            background-color: $contentShade100;
+                                        }
+                                    }
+                                }
+
+                                .contacts {
+                                    max-height: 400px;
+                                    ul {
+                                        > li {
+                                            &:hover {
+                                                background-color: $contentShade100;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.layout-wrapper {
+    &.layout-rightpanel-active {
+        .layout-rightpanel {
+            transform: translate3d(0px, 0px, 0px);
+        }
+    }
+}
+
+@media(max-width: $phoneBreakpoint) {
+    .layout-rightpanel {
+        width: 100%;
+        transform: translate3d(100%, 0px, 0px);
+    }
+    
+}

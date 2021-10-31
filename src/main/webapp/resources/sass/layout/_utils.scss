@@ -1,0 +1,89 @@
+/* Utils */
+.clearfix:after {
+    content:" ";
+    display:block;
+    clear:both;
+}
+
+.card {
+    background: $contentShade100;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 10px 40px rgba(41, 50, 65, 0.06);
+    @include border-radius($borderRadius);
+    margin-bottom: 2rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .card-header {
+        @include flex();
+        @include flex-justify-between();
+        padding-bottom: 16px;
+
+        h6 {
+            margin-bottom: 2px;
+        }
+
+        .subtitle {
+            font-weight: 600;
+            color: $textShade300;
+        }
+    }
+
+    .card-subtitle {
+        color: $textShade300;
+        font-weight: 600;
+        margin: -1rem 0 1rem 0;
+    } 
+    
+    &.no-gutter {
+        margin-bottom: 0;
+    }
+
+}
+
+.nopad {
+    padding: 0;
+    
+    .ui-panel-content {
+        padding: 0;
+    }
+}
+
+
+
+.ui-g {
+    -ms-flex-wrap: wrap;
+}
+
+.p-sr-only {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+.ui-text-secondary {
+    color: $textShade300;
+}
+
+.layout-wrapper {
+    .layout-ajax-loader {
+        position: absolute;
+        right: 15px;
+        bottom: 70px;
+    
+        .layout-ajax-loader-icon {
+            color: red;
+            font-size: 32px;
+        }
+    }
+}

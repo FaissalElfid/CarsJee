@@ -1,0 +1,20 @@
+.layout-menu-dark {
+    $menuBgColor:#293241;
+    $rootMenuItemTextColor:#E9E9E9;
+    $rootMenuItemHoverBgColor:var(--primaryLighterColor);
+
+    $activeRootMenuItemTextColor:var(--primaryLightColor);
+    $menuItemIconColor:var(--primaryLightColor);
+
+    $submenuItemTextColor:rgba(233, 233, 233, .8);
+    $submenuItemHoverBgColor:var(--primaryLighterColor);
+    $activeSubmenuItemTextColor:#E9E9E9;
+
+    $slimActiveRootMenuItemBgColor:var(--primaryLighterColor);
+    $slimActiveRootMenuItemTextColor:var(--primaryLightColor);
+
+    $menuShadow: 0px 10px 40px rgba(41, 50, 65, 0.06);
+
+    @import '../_menu_theme';
+}
+

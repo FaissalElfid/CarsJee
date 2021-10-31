@@ -1,0 +1,280 @@
+body {
+    .ui-overlaypanel {
+        background: $panelContentBg;
+        color: $panelContentTextColor;
+        padding: 0;
+        border: $overlayContentBorder;
+        box-shadow: $overlayContainerShadow;
+        border-radius: $borderRadius;
+
+        .ui-overlaypanel-content {
+            padding: $panelContentPadding;
+        }
+        
+        .ui-overlaypanel-close {
+            position: absolute;
+            width: $actionIconWidth;
+            height: $actionIconHeight;
+            right: -1 * $actionIconWidth / 2;
+            top: -1 * $actionIconWidth / 2;
+            background: $overlayPanelCloseIconBg;
+            color: $overlayPanelCloseIconColor;
+            transition: $transition;
+            border-radius: $actionIconBorderRadius;
+            text-align: center;
+            line-height: $actionIconHeight;
+            padding: 0;
+
+            &:hover {
+                background: $overlayPanelCloseIconHoverBg;
+                color: $overlayPanelCloseIconHoverColor;
+            }
+
+            .ui-icon {
+                @include icon_override("\e90b");
+                display: inline-block;
+                line-height: inherit;
+            }
+        }
+    }
+    
+    .ui-dialog {
+        padding: 0;
+        box-shadow: $overlayContainerShadow;
+        border: $overlayContentBorder;
+        border-radius: $borderRadius;
+        
+        .ui-dialog-titlebar {
+            background: $dialogHeaderBg;
+            color: $dialogHeaderTextColor;
+            font-weight: $dialogHeaderFontWeight;
+            border-bottom: $dialogHeaderBorder;
+            padding: $dialogHeaderPadding;
+            
+            .ui-dialog-title {
+                margin: 0;
+                float: none;
+                font-size: $dialogHeaderFontSize;
+            }
+            
+            .ui-dialog-titlebar-icon {
+                border: 0 none;
+                padding: 0;
+                margin-left: $inlineSpacing;
+                @include action-icon();
+                
+                .ui-icon-closethick {
+                    @include icon_override("\e90b");
+                }
+
+                .ui-icon-minus {
+                    @include icon_override("\e90f");
+                } 
+
+                .ui-icon-plus {
+                    @include icon_override("\e90d");
+                }
+
+                .ui-icon-extlink {
+                    @include icon_override("\e93b");
+                }
+
+                .ui-icon-newwin {
+                    @include icon_override("\e93a");
+                }
+            }
+        }
+        
+        .ui-dialog-content {
+            background: $dialogContentBg;
+            color: $dialogContentTextColor;
+            border: $dialogContentBorder;
+            padding: $dialogContentPadding;
+            border: $dialogContentBorder;
+        }
+        
+        .ui-dialog-footer {
+            border-top: $dialogFooterBorder;
+            background: $dialogFooterBg;
+            color: $dialogFooterTextColor;
+            padding: $dialogFooterPadding;
+            margin: 0;
+            text-align: right;
+            
+            button {
+                margin: 0 $inlineSpacing 0 0;
+                width: auto;
+            }
+        }
+                
+        &.ui-confirm-dialog {
+            .ui-dialog-content {
+                padding: $confirmDialogContentPadding;
+                @include flex();
+                @include flex-align-center();
+
+                > span {
+                    float: none;
+                    display: inline-block;
+                    vertical-align: middle;
+                    line-height: 1;
+                    margin: 0 0 0 $inlineSpacing;
+                    
+                    &.ui-icon {
+                        margin-right: $inlineSpacing;
+                        font-size: $confirmDialogIconFontSize;
+
+                        &.ui-icon-warn {
+                            @include icon_override("\e922");   
+                        }
+
+                        &.ui-icon-info {
+                            @include icon_override("\e924");   
+                        }
+
+                        &.ui-icon-error {
+                            @include icon_override("\e90c");   
+                        }
+                    }
+                }
+            }
+        }
+        
+        .ui-resizable-handle {
+            display: none !important;
+        }
+    }
+
+    .ui-tooltip {        
+        .ui-tooltip-text {
+            background: $tooltipBg;
+            color: $tooltipTextColor;
+            box-shadow: $overlayContainerShadow;
+            border-radius: $borderRadius;
+        }
+        
+        &.ui-state-error {
+            border: 0 none;
+        }
+        
+        &.ui-tooltip-right {
+            .ui-tooltip-arrow {
+                border-right-color: $tooltipBg;;
+            }
+        }
+        
+        &.ui-tooltip-left {
+            .ui-tooltip-arrow {
+                border-left-color: $tooltipBg;;
+            }
+        }
+        
+        &.ui-tooltip-top {
+            .ui-tooltip-arrow {
+                border-top-color: $tooltipBg;;
+            }
+        }
+        
+        &.ui-tooltip-bottom {
+            .ui-tooltip-arrow {
+                border-bottom-color: $tooltipBg;;
+            }
+        }
+    }
+    
+    .ui-lightbox {
+        box-shadow: $overlayContainerShadow;
+        
+        .ui-lightbox-caption {
+            border: $panelHeaderBorder;
+            background: $panelHeaderBg;
+            color: $panelHeaderTextColor;
+            padding: $panelHeaderPadding;
+            font-weight: $panelHeaderFontWeight;
+            
+            .ui-lightbox-caption-text {
+                color: $panelHeaderTextColor;
+                margin: 0;
+            }
+            
+            .ui-lightbox-close {
+                padding: 0;
+                @include action-icon();
+
+                .ui-icon {
+                    @include icon_override("\e90b");
+                }
+            }
+        }
+        
+        .ui-lightbox-content-wrapper {
+            overflow: hidden;
+            background: $panelContentBg;
+            color: $panelContentTextColor;
+            border: 0 none;
+            padding: 0;
+                      
+            .ui-lightbox-nav-left {
+                @include icon_override("\e900");
+                transition: all $transitionDuration;
+                font-size: 24px;
+                margin-left: 4px;
+                color: #ffffff;
+
+                &:hover {
+                    scale: 1.2;
+                }
+                
+                span {
+                    display: none;
+                }
+            }
+            
+            .ui-lightbox-nav-right {
+                @include icon_override("\e901");
+                transition: all $transitionDuration;
+                font-size: 24px;
+                margin-right: 4px;
+                color: #ffffff;
+                
+                &:hover {
+                    scale: 1.2;
+                }
+                
+                span {
+                    display: none;
+                }
+            }
+
+            .ui-lightbox-content {
+                border-radius: 0;
+            }
+            
+            .ui-lightbox-content.ui-lightbox-loading + a {
+                display: none;
+            }
+        }
+    }
+
+    .ui-sidebar {
+        background: $panelContentBg;
+        color: $panelContentTextColor;
+        padding: $panelContentPadding;
+        border: $overlayContentBorder;
+        box-shadow: none;
+
+        .ui-sidebar-close {
+            padding: 0;
+            @include action-icon();
+
+            .ui-icon {
+                @include icon_override("\e90b");
+            }
+        }
+
+        &.ui-sidebar-active {
+            box-shadow: $overlayContainerShadow;
+        }
+    }
+
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<f:view>
+    <head>
+        <title>Login screen</title>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
+    <body>
+    <h1>Login screen</h1>
+    <h:form>
+        Login:
+        <h:inputText id="login" value="#{loginBean.login}" />
+        <br/>
+        Password:
+        <h:inputText id="password" value="#{loginBean.password}" />
+        <br/>
+        <h:commandButton action="#{loginBean.returnAction}" value="Connect" />
+    </h:form>
+    </body>
+</f:view>
+</html>

@@ -1,0 +1,144 @@
+@media (min-width: $tabletBreakpoint + 1) {
+    .layout-wrapper {
+        &.layout-horizontal {
+            .menu-wrapper {
+                top: 0px;
+                width: 100%;
+                height: 62px;
+                position: relative;
+
+                .sidebar-logo {
+                   display: none;
+                }
+
+                .layout-menu-container {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    
+                    .layout-menu {
+                        list-style-type: none;
+                        margin: 0px 16px;
+                        @include flex();
+                        @include flex-direction-row();
+                        max-width: 100%;
+                        overflow: visible;
+    
+                        li {
+                            &.active-menuitem {
+                                > a {                    
+                                    i.layout-submenu-toggler {
+                                        @include rotate(-180deg);
+                                    }
+                                }
+                            }
+                        }
+            
+                        > li {
+                            padding: 0;
+                            position: relative;
+                            margin: 0 9px;
+                            
+    
+                            .layout-menu-tooltip {
+                                display: none;
+                            }
+                            a {
+                                margin: 0px;
+                                padding: 10px 5px;
+                                @include flex();
+                                @include flex-align-center();
+                                @include transition(all $transitionDuration);
+
+                                &:before {
+                                    display: none;
+                                }
+
+                                > span {
+                                    margin: 0 8px;
+                                    font-weight: 600;
+                                    font-size: 12px;
+                                    line-height: 14px;
+                                    visibility: visible;
+                                }
+            
+                                > i {
+                                    font-size: 14px;
+                                    &.layout-submenu-toggler {
+                                        @include transition(transform $transitionDuration);
+                                        margin-left: auto;
+                                        font-size:12px ;
+                                        visibility: visible;
+                                    }
+                                }
+                            }
+    
+                            &.layout-root-menuitem {
+                                > div {
+                                    display: none;
+                                }
+                            }
+            
+                            > ul {
+                                display: none;
+                                list-style-type: none;
+                                top: 44px;
+                                left: 0px;
+                                width: 230px;
+                                position: absolute;
+                                padding: 10px;
+                                margin: 0;
+                                z-index: 100;
+                                overflow: auto;
+                                max-height: 460px;
+            
+                                > li {
+                                    border: 0 none;
+                                    margin: 0;
+                                    @include nested-submenu-indents(10, 2, 10);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .layout-topbar{
+                .layout-topbar-wrapper {
+                    .layout-topbar-left {
+                        .menu-button-wrapper {
+                            .menu-button {
+                                display: none;
+                            }
+                        }
+                    }
+                    .layout-topbar-right {
+                        .layout-topbar-actions {
+                            > li {
+                                &.active-topmenuitem {
+                                    &.search-item {
+                                        a {
+                                            display: block;
+                                        }
+                                        >.search-input-wrapper{
+                                            display: none;
+                                        }
+                                        > ul {
+                                            display:block;
+                                            padding: 0;
+                                            @include border-radius(12px);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+

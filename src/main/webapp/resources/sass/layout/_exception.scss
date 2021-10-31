@@ -1,0 +1,124 @@
+.exception-body {
+    .exception-topbar {
+        height: 62px;
+        background-color: $contentShade100;
+        box-shadow: 0 10px 40px 0 rgba(#293241,0.06);
+        @include flex();
+        @include flex-align-center();
+        padding: 0 16px;
+
+        .layout-topbar-logo {
+            >img {
+                height: 15px;
+            }
+        }
+    }
+    .exception-wrapper {
+        @include flex();
+        @include flex-direction-column();
+        @include flex-justify-between();
+        @include flex-align-center();
+        min-height: calc(100vh - 62px);
+
+        .exception-content {
+            @include flex();
+            @include flex-direction-column();
+            @include flex-justify-center();
+            flex: 1 1 auto;
+
+            > span {
+                font-weight: normal;
+                font-size: 60px;
+                line-height: 73px;
+                text-align: center;
+                display: block;
+            }
+        }
+
+        .exception-footer {
+            @include flex();
+            @include flex-align-center();
+            padding-bottom: 70px;
+    
+            h4 {
+                line-height: 22px;
+                margin: 0;
+                margin-right: 32px;
+            }
+    
+            h6 {
+                line-height: 17px;
+                margin: 0;
+                color:$textShade300;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &.notfound {
+        .exception-wrapper {
+            @include flex();
+            @include flex-direction-column();
+            @include flex-justify-between();
+            @include flex-align-center();
+            min-height: calc(100vh - 62px);
+    
+            .exception-content {
+                text-align: center;
+                @include flex();
+                @include flex-direction-column();
+                @include flex-justify-center();
+                @include flex-align-center();
+                flex: 1 1 auto;
+
+                img {
+                    width: 332px;
+                    height: 271px;
+                    margin-bottom: -150px;
+                }
+    
+                > span {
+                    font-size: 140px;
+                    line-height: 171px;
+
+                    &.exception-subtitle {
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 17px;
+                        color: $textShade300;
+                    }
+                }
+
+                > button{
+                    margin-top: 20px;
+                    width: 155px;
+                    @include border-radius(12px);
+
+                    > span {
+                        padding: 18px;
+                        font-weight: 600;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media (max-width: $tabletBreakpoint) {
+    .exception-body {
+        .exception-wrapper {
+            @include flex();
+            @include flex-direction-column();
+            @include flex-justify-between();
+            @include flex-align-center();
+            min-height: calc(100vh - 62px);
+
+            .exception-footer {
+                @include flex();
+                @include flex-align-center();
+                padding-bottom: 20px;
+            }
+        }
+    }
+}

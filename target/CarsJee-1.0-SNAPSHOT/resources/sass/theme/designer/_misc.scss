@@ -1,0 +1,317 @@
+body {
+    .ui-progressbar {
+        border: $progressBarBorder;
+        height: $progressBarHeight;
+        background: $progressBarBg;
+        border-radius: $borderRadius;
+        
+        .ui-progressbar-value {
+            border: 0 none;
+            margin: 0;
+            background: $progressBarValueBg;
+            border-radius: $borderRadius;
+        }
+        
+        .ui-progressbar-label {
+            margin-top: 0;
+            display: none !important;
+        }
+    }
+    
+    .ui-galleria {
+        .ui-galleria-nav-prev,
+        .ui-galleria-nav-next {
+            transition: all $transitionDuration;
+            position: absolute;
+            color: $panelContentTextColor;
+            margin-bottom: -5px;
+            
+            &:hover {
+                scale: 1.2;
+            }
+        }
+
+        .ui-galleria-nav-prev {
+            @include icon_override("\e900");
+            font-size: 20px;
+        }
+
+        .ui-galleria-nav-next {
+            @include icon_override("\e901");
+            font-size: 20px;
+        }
+    }
+
+    .ui-clock {
+        border: $panelContentBorder;
+        background: $panelContentBg;
+        color: $panelContentTextColor;
+        padding: $panelContentPadding;
+    }
+
+    .ui-log {
+        padding: 0;
+        box-shadow: $overlayContainerShadow;
+        border: $overlayContentBorder;
+        border-radius: $borderRadius;
+        height: auto;
+        
+        .ui-log-header {
+            background: $dialogHeaderBg;
+            color: $dialogHeaderTextColor;
+            font-weight: $dialogHeaderFontWeight;
+            border-bottom: $dialogHeaderBorder;
+            padding: $dialogHeaderPadding;
+            height: auto;
+            
+            .ui-log-button {
+                display: inline-block;
+                position: static;
+                margin-right: $inlineSpacing;
+                padding: 2px;
+                @include action-icon();
+                                
+                .ui-icon-trash {
+                    @include icon_override("\e93d");
+                }
+
+                .ui-icon-note {
+                    @include icon_override("\e9a8");
+                }
+
+                .ui-icon-info {
+                    @include icon_override("\e924");
+                }
+
+                .ui-icon-notice {
+                    @include icon_override("\e989");
+                }
+
+                .ui-icon-search {
+                    @include icon_override("\e908");
+                }
+
+                .ui-icon-alert {
+                    @include icon_override("\e922");
+                }
+            }
+        }
+        
+        .ui-log-content {
+            background: $dialogContentBg;
+            color: $dialogContentTextColor;
+            border: $dialogContentBorder;
+            padding: $dialogContentPadding;
+            border: $dialogContentBorder;
+            overflow: auto;
+        }
+    }
+
+    .ui-terminal {
+        background: $panelContentBg;
+        color: $panelContentTextColor;
+        border: $panelContentBorder;
+        padding: $panelContentPadding;
+
+        .ui-terminal-input {
+            
+        }
+    }
+}
+
+.ui-badge {
+    background: $badgeBg;
+    color: $badgeTextColor;
+    font-size: $badgeFontSize;
+    font-weight: $badgeFontWeight;
+    min-width: $badgeMinWidth;
+    height: $badgeHeight;
+    line-height: $badgeHeight;
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+
+    &.ui-badge-secondary {
+        background: $secondaryButtonBg;
+        color: $secondaryButtonTextColor;
+    }
+
+    &.ui-badge-success {
+        background: $successButtonBg;
+        color: $successButtonTextColor;
+    }
+
+    &.ui-badge-info {
+        background: $infoButtonBg;
+        color: $infoButtonTextColor;
+    }
+
+    &.ui-badge-warning {
+        background: $warningButtonBg;
+        color: $warningButtonTextColor;
+    }
+
+    &.ui-badge-danger {
+        background: $dangerButtonBg;
+        color: $dangerButtonTextColor;
+    }
+
+    &.ui-badge-lg {
+        font-size: 1.5 * $badgeFontSize;
+        min-width: 1.5 * $badgeMinWidth;
+        height: 1.5 * $badgeHeight;
+        line-height: 1.5 * $badgeHeight;
+    }
+
+    &.ui-badge-xl {
+        font-size: 2 * $badgeFontSize;
+        min-width: 2 * $badgeMinWidth;
+        height: 2 * $badgeHeight;
+        line-height: 2 * $badgeHeight;
+    }
+}
+
+.ui-overlay-badge {
+    position: relative;
+    display: inline-block;
+
+    .ui-badge {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(50%, -50%);
+        margin: 0;
+    }
+}
+
+.ui-tag {
+    background: $badgeBg;
+    color: $badgeTextColor;
+    font-size: $badgeFontSize;
+    font-weight: $badgeFontWeight;
+    padding: $tagPadding;
+    border-radius: $borderRadius;
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+
+    &.ui-tag-success {
+        background: $successButtonBg;
+        color: $successButtonTextColor;
+    }
+
+    &.ui-tag-info {
+        background: $infoButtonBg;
+        color: $infoButtonTextColor;
+    }
+
+    &.ui-tag-warning {
+        background: $warningButtonBg;
+        color: $warningButtonTextColor;
+    }
+
+    &.ui-tag-danger {
+        background: $dangerButtonBg;
+        color: $dangerButtonTextColor;
+    }
+
+    &.ui-tag-rounded {
+        border-radius: 10rem;
+    }
+}
+
+.ui-shadow-1 {
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}
+
+.ui-shadow-2 {
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.ui-shadow-3 {
+    box-shadow: 0 3px 3px -2px rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 1px 8px 0 rgba(0,0,0,.12);
+}
+
+.ui-shadow-4 {
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+}
+
+.ui-shadow-5 {
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 5px 8px 0 rgba(0,0,0,.14), 0 1px 14px 0 rgba(0,0,0,.12);
+}
+
+.ui-shadow-6 {
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.ui-shadow-7 {
+    box-shadow: 0 4px 5px -2px rgba(0,0,0,.2), 0 7px 10px 1px rgba(0,0,0,.14), 0 2px 16px 1px rgba(0,0,0,.12);
+}
+
+.ui-shadow-8 {
+    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+}
+
+.ui-shadow-9 {
+    box-shadow: 0 5px 6px -3px rgba(0,0,0,.2), 0 9px 12px 1px rgba(0,0,0,.14), 0 3px 16px 2px rgba(0,0,0,.12);
+}
+
+.ui-shadow-10 {
+    box-shadow: 0 6px 6px -3px rgba(0,0,0,.2), 0 10px 14px 1px rgba(0,0,0,.14), 0 4px 18px 3px rgba(0,0,0,.12);
+}
+
+.ui-shadow-11 {
+    box-shadow: 0 6px 7px -4px rgba(0,0,0,.2), 0 11px 15px 1px rgba(0,0,0,.14), 0 4px 20px 3px rgba(0,0,0,.12);
+}
+
+.ui-shadow-12 {
+    box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 12px 17px 2px rgba(0,0,0,.14), 0 5px 22px 4px rgba(0,0,0,.12);
+}
+
+.ui-shadow-13 {
+    box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 13px 19px 2px rgba(0,0,0,.14), 0 5px 24px 4px rgba(0,0,0,.12);
+}
+
+.ui-shadow-14 {
+    box-shadow: 0 7px 9px -4px rgba(0,0,0,.2), 0 14px 21px 2px rgba(0,0,0,.14), 0 5px 26px 4px rgba(0,0,0,.12);
+}
+
+.ui-shadow-15 {
+    box-shadow: 0 8px 9px -5px rgba(0,0,0,.2), 0 15px 22px 2px rgba(0,0,0,.14), 0 6px 28px 5px rgba(0,0,0,.12);
+}
+
+.ui-shadow-16 {
+    box-shadow: 0 8px 10px -5px rgba(0,0,0,.2), 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12);
+}
+
+.ui-shadow-17 {
+    box-shadow: 0 8px 11px -5px rgba(0,0,0,.2), 0 17px 26px 2px rgba(0,0,0,.14), 0 6px 32px 5px rgba(0,0,0,.12);
+}
+
+.ui-shadow-18 {
+    box-shadow: 0 9px 11px -5px rgba(0,0,0,.2), 0 18px 28px 2px rgba(0,0,0,.14), 0 7px 34px 6px rgba(0,0,0,.12);
+}
+
+.ui-shadow-19 {
+    box-shadow: 0 9px 12px -6px rgba(0,0,0,.2), 0 19px 29px 2px rgba(0,0,0,.14), 0 7px 36px 6px rgba(0,0,0,.12);
+}
+
+.ui-shadow-20 {
+    box-shadow: 0 10px 13px -6px rgba(0,0,0,.2), 0 20px 31px 3px rgba(0,0,0,.14), 0 8px 38px 7px rgba(0,0,0,.12);
+}
+
+.ui-shadow-21 {
+    box-shadow: 0 10px 13px -6px rgba(0,0,0,.2), 0 21px 33px 3px rgba(0,0,0,.14), 0 8px 40px 7px rgba(0,0,0,.12);
+}
+
+.ui-shadow-22 {
+    box-shadow: 0 10px 14px -6px rgba(0,0,0,.2), 0 22px 35px 3px rgba(0,0,0,.14), 0 8px 42px 7px rgba(0,0,0,.12);
+}
+
+.ui-shadow-23 {
+    box-shadow: 0 11px 14px -7px rgba(0,0,0,.2), 0 23px 36px 3px rgba(0,0,0,.14), 0 9px 44px 8px rgba(0,0,0,.12);
+}
+
+.ui-shadow-24 {
+    box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+}

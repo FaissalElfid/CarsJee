@@ -1,0 +1,566 @@
+body {
+    .ui-panel {
+        padding: 0;
+        
+        .ui-panel-title {
+            margin: 0;
+        }
+
+        .ui-panel-titlebar {
+            border: $panelHeaderBorder;
+            background: $panelHeaderBg;
+            color: $panelHeaderTextColor;
+            padding: $panelHeaderPadding;
+            font-weight: $panelHeaderFontWeight;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            @include border-radius-top($borderRadius);
+
+            .ui-panel-titlebar-icon {
+                margin: 0;
+                margin-left: $inlineSpacing;
+                @include action-icon();
+                margin-top: -1 * $actionIconHeight / 8;
+                margin-bottom: -1 * $actionIconHeight / 4;
+
+                .ui-icon-closethick {
+                    @include icon_override("\e90b");
+                } 
+
+                .ui-icon-minusthick {
+                    @include icon_override("\e90f");
+                } 
+
+                .ui-icon-plusthick {
+                    @include icon_override("\e90d");
+                }
+
+                .ui-icon-gear {
+                    @include icon_override("\e94a");
+                }
+            }
+        }
+
+        .ui-panel-content {
+            border: $panelContentBorder;
+            background: $panelContentBg;
+            color: $panelContentTextColor;
+            padding: $panelContentPadding;
+            border-top: 0 none;
+            @include border-radius-bottom($borderRadius);
+        }
+
+        .ui-panel-footer {
+            border: $panelFooterBorder;
+            background: $panelFooterBg;
+            color: $panelFooterTextColor;
+            padding: $panelFooterPadding;
+            margin: 0;
+            border-top: 0 none;
+        }
+
+        &.ui-panel-collapsed-h {
+            .ui-panel-titlebar {   
+                position: relative;
+
+                .ui-panel-titlebar-icon {
+                    float: none;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-left: -1 * $iconSize / 2;
+                    margin-top: -1 * $iconSize / 2;
+                }
+            }
+        }
+    }
+
+    .ui-accordion {
+        .ui-accordion-header {
+            border: $accordionHeaderBorder;
+            border-top: 0 none;
+            background: $accordionHeaderBg;
+            color: $accordionHeaderTextColor;
+            padding: $accordionHeaderPadding;
+            font-weight: $accordionHeaderFontWeight;
+            margin-top: $accordionSpacing;
+            transition: $transition;
+            user-select: none;
+            border-radius: 0;
+            position: relative;
+            outline: 0 none;
+
+            &:first-child {
+                margin-top: 0;
+                border-top: $accordionHeaderBorder;
+                border-top-right-radius: $borderRadius;
+                border-top-left-radius: $borderRadius;
+            }
+
+            &.ui-accordion-header-last {
+                border-bottom-right-radius: $borderRadius;
+                border-bottom-left-radius: $borderRadius;
+
+                &.ui-state-active {
+                    border-radius: 0; 
+                }
+            }
+
+            &.ui-state-hover {
+                border-color: $accordionHeaderHoverBorderColor;
+                background: $accordionHeaderHoverBg;
+                color: $accordionHeaderTextHoverColor;
+            }
+
+            &.ui-state-active {
+                border-color: $accordionHeaderActiveBorderColor;
+                background: $panelHeaderBg;
+                color: $accordionHeaderTextActiveColor;
+
+                &:hover {
+                    border-color: $accordionHeaderActiveHoverBorderColor;
+                    background: $accordionHeaderActiveHoverBg;
+                    color: $accordionHeaderTextHoverColor;
+                }
+            }
+
+            &:focus {
+                @include focused();
+            }
+
+            > .ui-icon {
+                position: static;
+                display: inline-block;
+                margin: 0 $inlineSpacing 0 0;
+
+                &.ui-icon-triangle-1-e {
+                    @include icon_override("\e901");
+                }
+    
+                &.ui-icon-triangle-1-s {
+                    @include icon_override("\e902");
+                }
+            }
+        }
+
+        .ui-accordion-content {
+            border: $panelContentBorder;
+            background: $panelContentBg;
+            color: $panelContentTextColor;
+            padding: $panelContentPadding;
+            margin: 0;
+            position: static;
+            border-top: 0 none;
+
+            &:last-of-type {
+                border-bottom-right-radius: $borderRadius;
+                border-bottom-left-radius: $borderRadius;
+            }
+        }
+    }
+
+    .ui-tabs {
+        padding: 0;
+        position: static;
+        
+        .ui-tabs-nav {
+            margin: 0;
+            padding: 0;
+            background: $tabsNavBg;
+            @include flex();
+            
+            li.ui-tabs-header {
+                list-style: none;
+                padding: 0;
+                white-space: nowrap;
+                display: inline-block;
+                vertical-align: top;
+                float: none;
+                padding: $tabsHeaderPadding;
+                background: $tabsHeaderBg;
+                color: $tabsHeaderTextColor;
+                margin: 0;
+                cursor: pointer;
+                @include flex();
+                @include flex-align-center();
+                transition: $transition;
+
+                a {
+                    color: $tabsHeaderTextColor;
+                    padding: 0;
+                    font-weight: $tabsHeaderFontWeight;
+                    display: block;
+                    line-height: 1;
+                    transition: $transition;
+                }
+
+                .ui-icon {
+                    position: static;
+
+                    &.ui-icon-close {
+                        margin: 0;
+                        float: none;
+                        @include icon_override("\e90b");
+                        margin-left: $inlineSpacing;
+                    }
+                }
+
+                &.ui-state-hover {
+                    background: $tabsHeaderHoverBg;
+
+                    a {
+                        color: $tabsHeaderTextHoverColor;
+                    }
+
+                    .ui-icon {
+                        color: $tabsHeaderTextHoverColor;
+                    }
+                }
+
+                &.ui-state-active {
+                    background: $tabsHeaderActiveBg;
+
+                    a {
+                        color: $tabsHeaderTextActiveColor;
+                    }
+
+                    .ui-icon {
+                        color: $tabsHeaderTextActiveColor;
+                    }
+                }
+
+                &.ui-tabs-outline {
+                    @include focused();
+                }
+            }
+        }
+
+        .ui-tabs-panels {
+            border: $tabsContentBorder;
+            background: $tabsContentBg;
+            color: $tabsContentTextColor;
+            padding: 0;
+            margin: 0;
+            position: static;
+            @include border-radius-bottom($borderRadius);
+
+            .ui-tabs-panel {
+                padding: $panelContentPadding;
+            }
+        }
+
+        &.ui-tabs-top {
+            .ui-tabs-nav {
+                margin: 0;
+                padding: 0;
+                position: relative;
+                @include flex();
+                @include flex-wrap(wrap);
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    border-bottom: $tabsNavBorder;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                }
+
+                li.ui-tabs-header {
+                    top: 0;
+                    border-bottom: $tabsNavBorder;
+
+                    &.ui-state-hover {
+                        border-color: $tabsHeaderHoverBorderColor;
+                    }
+    
+                    &.ui-state-active {
+                        border-color: $tabsHeaderActiveBorderColor;
+                    }
+                }
+            }
+
+            .ui-tabs-panels {
+                border-width: 1px 0 0 0;
+            }
+        }
+
+        &.ui-tabs-bottom {
+            .ui-tabs-nav {
+                margin: 0;
+                padding: 0;
+                position: relative;
+                @include flex();
+                @include flex-wrap(wrap);
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    border-top: $tabsNavBorder;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                }
+
+                li.ui-tabs-header {
+                    top: 0;
+                    border-top: $tabsNavBorder;
+
+                    &.ui-state-hover {
+                        border-color: $tabsHeaderHoverBorderColor;
+                    }
+    
+                    &.ui-state-active {
+                        border-color: $tabsHeaderActiveBorderColor;
+                    }
+                }
+            }
+
+            .ui-tabs-panels {
+                border-width: 1px 0 0 0;
+            }
+        }
+
+        &.ui-tabs-left, &.ui-tabs-right {
+            .ui-tabs-nav {
+                width: 25%;
+                margin: 0;
+                padding: 0;
+                height: auto;
+                @include flex-direction-column();
+
+                li.ui-tabs-header {
+                    width: 100%;
+                }
+            }
+
+            .ui-tabs-panels {
+                width: 75%;
+            }
+        }
+
+        &.ui-tabs-right {
+            .ui-tabs-nav {
+                margin: 0;
+                padding: 0;
+                border-left: $tabsNavBorder;
+
+                li.ui-tabs-header {
+                    top: 0;
+                    border-left: $tabsNavBorder;
+                    margin-left: -1 * $tabsNavBorderWidth;
+
+                    &.ui-state-hover {
+                        border-color: $tabsHeaderHoverBorderColor;
+                    }
+    
+                    &.ui-state-active {
+                        border-color: $tabsHeaderActiveBorderColor;
+                    }
+                }
+            }
+
+            .ui-tabs-panels {
+                border-width: 1px 0 0 0;
+            }
+        }
+
+        &.ui-tabs-left {
+            .ui-tabs-nav {
+                margin: 0;
+                padding: 0;
+                border-right: $tabsNavBorder;
+
+                li.ui-tabs-header {
+                    top: 0;
+                    border-right: $tabsNavBorder;
+                    margin-right: -1 * $tabsNavBorderWidth;
+
+                    &.ui-state-hover {
+                        border-color: $tabsHeaderHoverBorderColor;
+                    }
+    
+                    &.ui-state-active {
+                        border-color: $tabsHeaderActiveBorderColor;
+                    }
+                }
+            }
+
+            .ui-tabs-panels {
+                border-width: 1px 0 0 0;
+            }
+        }
+
+
+        .ui-tabs-navscroller {
+            position: relative;
+
+            .ui-tabs-navscroller-btn {
+                border: 0 none;
+                background: $tabsScrollerButtonBg;
+                color: $tabsScrollerButtonIconColor;
+                outline: 0 none;
+                z-index: 1;
+                @include flex();
+                @include flex-align-center();
+                transition: $transition;
+
+                &.ui-tabs-navscroller-btn-left {
+                    left: 0;
+                    height: 100%;
+
+                    .ui-icon {
+                        margin: 0;
+                        @include icon_override("\e900");
+                    }
+                }
+    
+                &.ui-tabs-navscroller-btn-right {
+                    right: 0;
+                    height: 100%;
+
+                    .ui-icon {
+                        margin: 0;
+                        @include icon_override("\e901");
+                    }
+                }
+
+                &.ui-state-hover {
+                    background: $tabsScrollerButtonHoverBg;
+                    color: $tabsScrollerButtonIconHoverColor;
+                }
+            }
+        }
+    }
+
+    .ui-panelgrid {
+        .ui-panelgrid-cell {
+            border: $panelContentBorder;
+            background: $panelContentBg;
+            color: $panelContentTextColor;
+            padding: $panelContentPadding;
+
+            &.ui-widget-header {
+                border: $panelHeaderBorder;
+                background: $panelHeaderBg;
+                color: $panelHeaderTextColor;
+                padding: $panelHeaderPadding;
+                font-weight: $panelHeaderFontWeight;
+            }
+        }
+    } 
+
+    .ui-scrollpanel {
+        border: $panelContentBorder;
+        background: $panelContentBg;
+        color: $panelContentTextColor;
+        padding: $panelContentPadding;
+
+        .ui-scrollpanel-drag {
+            background:$scrollPanelHandleBg;
+        }
+        
+        .ui-scrollpanel-track {
+            background: $scrollPanelTrackBg;
+            border: $scrollPanelTrackBorder;
+        }
+        
+        .ui-scrollpanel-corner {
+            background: $scrollPanelTrackBg;
+        }
+    }
+
+    .ui-toolbar {
+        border: $panelHeaderBorder;
+        background: $panelHeaderBg;
+        color: $panelHeaderTextColor;
+        padding: $panelHeaderPadding;
+        border-radius: $borderRadius;
+    }
+
+    .ui-fieldset {
+        border: $panelContentBorder;
+        background: $panelContentBg;
+        color: $panelContentTextColor;
+        padding: $panelContentPadding;
+        border-radius: $borderRadius;
+
+        .ui-fieldset-legend {
+            border: $panelHeaderBorder;
+            background: $panelHeaderBg;
+            color: $panelHeaderTextColor;
+            padding: $panelHeaderPadding;
+            font-weight: $panelHeaderFontWeight;
+            border-radius: $borderRadius;
+            user-select: none;
+            transition: $transition;
+
+            .ui-fieldset-toggler {
+                display: inline-block;
+                float: none;
+                margin-right: $inlineSpacing;
+            }
+
+            .ui-icon-minusthick {
+                @include icon_override("\e90f");
+            } 
+
+            .ui-icon-plusthick {
+                @include icon_override("\e90d");
+            }
+
+            &.ui-state-hover {
+                outline: 0 none;
+                border-color: $panelHeaderHoverBorderColor;
+                background: $panelHeaderHoverBg;
+                color: $panelHeaderTextHoverColor;
+
+                .ui-icon {
+                    color: $panelHeaderHoverIconColor;
+                }
+            }
+
+            &.ui-state-focus {
+                @include focused();
+            }
+        }
+    }
+
+    .ui-notificationbar {
+        background: $panelContentBg;
+        color: $panelContentTextColor;
+        padding: $panelContentPadding;
+        border: $panelContentBorder;
+    }
+
+    .ui-wizard {
+        .ui-wizard-step-titles {
+            .ui-wizard-step-title {
+                border: $panelHeaderBorder;
+                background: $panelHeaderBg;
+                color: $panelHeaderTextColor;
+                padding: $panelHeaderPadding;
+                margin: 0;
+                border-right: 0 none;
+                border-radius: 0;
+                                
+                &:first-child {
+                    @include border-radius-left($borderRadius);
+                }
+                
+                &:last-child {
+                    @include border-radius-right($borderRadius);
+                    border-right: $panelHeaderBorder;
+                }
+                
+                /*&.ui-state-highlight {
+                    border: $panelHeaderActiveBorder;
+                    background: $panelHeaderActiveBg;
+                    color: $panelHeaderTextActiveColor;
+                }*/
+            }
+        }
+    }  
+}

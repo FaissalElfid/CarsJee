@@ -1,0 +1,24 @@
+.grid-demo {
+    .grid-item {
+        text-align: center;
+        border-radius: 4px;
+        font-size: 1.5rem;
+        @include flex();
+        @include flex-align-center();
+        @include flex-justify-center();
+
+        &.grid-item-stretched {
+            height: 100%;
+            box-sizing: border-box;
+        }
+    }
+    
+    .vertical-container {
+        margin: 0;
+        height: 200px;
+    }
+    
+    .nested-grid .p-col-12 {
+        padding-bottom: 0;
+    }
+}

@@ -1,0 +1,19 @@
+.elevation-demo {
+    .shadow-container {
+        @include flex();
+        @include flex-align-center();
+        @include flex-wrap(wrap);
+    }
+
+    .box {
+        min-height: 100px;
+        min-width: 150px;
+        @include flex();
+        @include flex-align-center();
+        @include flex-justify-center();
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 2rem;
+        border-radius: $borderRadius;
+    }
+}

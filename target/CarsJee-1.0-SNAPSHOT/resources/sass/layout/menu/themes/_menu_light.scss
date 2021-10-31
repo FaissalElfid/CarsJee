@@ -1,0 +1,20 @@
+.layout-menu-light {
+    $menuBgColor:#ffffff;
+    $rootMenuItemTextColor:#293241;
+    $rootMenuItemHoverBgColor:var(--primaryLighterColor);
+
+    $activeRootMenuItemTextColor:var(--primaryColor);
+    $menuItemIconColor:var(--primaryColor);
+
+    $submenuItemTextColor:rgba(41, 50, 65, 0.7);
+    $submenuItemHoverBgColor:var(--primaryLighterColor);
+    $activeSubmenuItemTextColor:rgba(41, 50, 65, 0.8);
+
+    $slimActiveRootMenuItemBgColor:var(--primaryLighterColor);
+    $slimActiveRootMenuItemTextColor:var(--primaryColor);
+
+    $menuShadow: 0px 10px 40px rgba(41, 50, 65, 0.06);
+
+    @import '../_menu_theme';
+}
+
