@@ -1,12 +1,14 @@
 package org.irisi.carsjee;
 
-import jakarta.enterprise.context.SessionScoped;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.context.FacesContext;
 import jakarta.inject.Named;
 
 import java.io.Serializable;
 
 @Named("loginBean")
-@SessionScoped
+@RequestScoped
 public class LoginBean implements Serializable {
 
     private static final long serialVersionUID = -5433850275008415405L;
@@ -30,6 +32,15 @@ public class LoginBean implements Serializable {
     }
     public String returnAction() {
         System.out.println( "in returnAction" );
-        return password.equals( "007" ) ? "success" : "failure";
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Login success."));
+
+        if(!password.equals("007")){
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "False Email or Password !!"));
+            return "failure";
+        }else{
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Login success."));
+            return "success";
+        }
+//        return password.equals( "007" ) ? "success" : "failure";
     }
 }

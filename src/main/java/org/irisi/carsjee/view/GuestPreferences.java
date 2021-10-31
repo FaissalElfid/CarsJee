@@ -2,12 +2,14 @@ package org.irisi.carsjee.view;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.bean.ManagedBean;
-import jakarta.faces.bean.SessionScoped;
+import jakarta.enterprise.context.SessionScoped;
+import jakarta.inject.Named;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-@ManagedBean
+@Named("guestPreferences")
 @SessionScoped
 public class GuestPreferences implements Serializable {
 

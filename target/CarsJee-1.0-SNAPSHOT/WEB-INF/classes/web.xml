@@ -25,17 +25,4 @@
         <url-pattern>/faces/*</url-pattern>
     </servlet-mapping>
 
-    <!-- <context-param>
-        <param-name>primefaces.THEME</param-name>
-        <param-value>freya-#{guestPreferences.theme}</param-value>
-    </context-param>
-    <context-param>
-        <param-name>primefaces.FONT_AWESOME</param-name>
-        <param-value>true</param-value>
-    </context-param>
-    <context-param>
-        <param-name>jakarta.faces.FACELETS_LIBRARIES</param-name>
-        <param-value>/WEB-INF/primefaces-freya.taglib.xml</param-value>
-    </context-param> -->
-
 </web-app>
