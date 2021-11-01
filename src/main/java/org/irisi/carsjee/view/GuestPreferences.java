@@ -15,7 +15,7 @@ public class GuestPreferences implements Serializable {
 
     private String menuMode = "layout-sidebar";
 
-    private String darkMode = "dark";
+    private String darkMode = "light";
 
     private String componentTheme = "purple";
     

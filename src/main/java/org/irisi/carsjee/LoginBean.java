@@ -36,9 +36,7 @@ public class LoginBean implements Serializable {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "False Email or Password !!"));
             return "failure";
         }else{
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Login success."));
-            return "success";
+            return "dashboard.xhtml";
         }
-//        return password.equals( "007" ) ? "success" : "failure";
     }
 }

@@ -1,0 +1,278 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+    
+    <div class="layout-rightpanel">
+        <div class="rightpanel-wrapper">
+          <div class="rightpanel-section weather-section">
+            <div class="section-header">
+                <h6>Today</h6>
+            </div>
+            <div class="weather">
+            <p:graphicImage name="images/rightpanel/icon-sun.svg" library="demo" />
+            <div class="weather-info">
+                <h6>Ankara, 22 May</h6>
+                <h1>24º</h1>
+            </div>
+            </div>
+          </div>
+          <div class="rightpanel-section tasks-section">
+            <div class="section-header">
+                <h6>My list</h6>
+                <p:commandButton type="button" icon="pi pi-plus" styleClass="secondary-button text-button rounded-button" />
+            </div>
+            <ul>
+                <li>
+                    <div class="task-info">
+                        <h6>Perform usability testing for P15 MVP</h6>
+                        <span>-Public pages</span>
+                        <span>-Product pages</span>
+                    </div>
+                </li>
+                <li>   
+                    <div class="task-info">
+                        <h6>Buy puzzle set from Amazon</h6>
+                        <span>Ravensburger Seurat, 2000</span>
+                    </div>
+                </li>
+                <li class="done">   
+                    <div class="task-info">
+                        <h6>Morning Run</h6>
+                    </div>
+                    <i class="pi pi-check"></i>
+                </li>
+                <li class="done">   
+                    <div class="task-info">
+                        <h6>Morning Run</h6>
+                    </div>
+                    <i class="pi pi-check"></i>
+                </li>
+            </ul>
+          </div>
+
+          <div class="rightpanel-section favorites-section">
+            <div class="section-header">
+                <h6>Favorites</h6>
+            </div>
+            <div class="favorite-items">
+                <a href="#" class="favorite-item">
+                    <p:graphicImage name="images/rightpanel/github.svg" library="demo" />
+                </a>
+                <a href="#" class="favorite-item">
+                    <p:graphicImage name="images/rightpanel/slack.svg" library="demo" />
+                </a>
+                <a href="#" class="favorite-item">
+                    <p:graphicImage name="images/rightpanel/aws.svg" library="demo" />
+                </a>
+                <a href="#" class="favorite-item">
+                    <p:graphicImage name="images/rightpanel/jenkins.svg" library="demo" />
+                </a>
+                <a href="#" class="favorite-item">
+                    <p:graphicImage name="images/rightpanel/jira.svg" library="demo" />
+                </a>
+                <a href="#" class="add-item">
+                  <i class="pi pi-plus"></i>
+                </a>
+            </div>
+          </div>
+
+          <div class="rightpanel-section chat-section chat">
+            <p:tabView>
+                <p:tab>
+                    <f:facet name="title">
+                        <p:graphicImage name="images/rightpanel/profile-1.png" library="demo" />
+                        <span class="ui-badge">3</span>
+                    </f:facet>
+                    <div class="chat">
+                        <span class="fade"></span>
+                        <div class="chat-content">
+                            <div class="chat-message send">
+                                <span class="name">You</span>
+                                <div class="message">
+                                    <p>Hey M. hope you are well. Our idea is accepted by the board. Now it’s time to execute it.</p>
+                                    <span>3 mins ago</span>
+                                </div>
+                                <div class="message">
+                                    <p>we did it! 🤠</p>
+                                    <span>3 mins ago</span>
+                                </div>
+                            </div>
+                            <div class="chat-message">
+                                <span class="name">Micheal J.</span>
+                                <div class="message">
+                                    <p>That’s really good!</p>
+                                    <span>3 mins ago</span>
+                                </div>
+                            </div>
+                            <div class="chat-message send">
+                                <span class="name">You</span>
+                                <div class="message">
+                                    <p>But it’s important to ship MVP ASAP</p>
+                                    <span>3 mins ago</span>
+                                </div>
+                            </div>
+                            <div class="chat-message">
+                                <span class="name">Micheal J.</span>
+                                <div class="message">
+                                    <p>I’ll be looking at the process then, just to be sure 🤓 </p>
+                                    <span>3 mins ago</span>
+                                </div>
+                            </div>
+                            <div class="chat-message send">
+                                <span class="name">You</span>
+                                <div class="message">
+                                    <p>That’s awesome. Thanks!</p>
+                                    <span>3 mins ago</span>
+                                </div>
+                            </div>
+                            <div class="chat-message">
+                                
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <p:inputText placeholder="Write here..." />
+                        </div>
+                    </div>
+                </p:tab>
+                <p:tab>
+                    <f:facet name="title">
+                        <p:graphicImage name="images/rightpanel/profile-2.png" library="demo" />
+                        <span class="ui-badge">1</span>
+                    </f:facet>
+                    <div class="chat">
+                        <span class="fade"></span>
+                        <div class="chat-content">
+                            <div class="chat-message">
+                                <span class="name">Sarah</span>
+                                <div class="message">
+                                    <p>That’s really good!</p>
+                                    <span>3 mins ago</span>
+                                </div>
+                            </div>
+                            <div class="chat-message send">
+                                <span class="name">You</span>
+                                <div class="message">
+                                    <p>But it’s important to ship MVP ASAP</p>
+                                    <span>3 mins ago</span>
+                                </div>
+                            </div>
+                            <div class="chat-message">
+                                
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <p:inputText placeholder="Write here..." />
+                        </div>
+                    </div>
+                </p:tab>
+                <p:tab>
+                    <f:facet name="title">
+                        <p:graphicImage name="images/rightpanel/profile-3.png" library="demo" />
+                    </f:facet>
+                    <div class="chat">
+                        <div class="chat-content no-message">
+                            <h4>No Message From Margret K.</h4>
+                        </div>
+                        <div class="chat-input">
+                            <p:inputText placeholder="Write here..." />
+                        </div>
+                    </div>
+                    
+                </p:tab>
+                <p:tab>
+                    <f:facet name="title">
+                        <p:graphicImage name="images/rightpanel/profile-4.png" library="demo" />
+                    </f:facet>
+                    <div class="chat">
+                        <div class="chat-content no-message">
+                            <h4>No Message From Bob C.</h4>
+                        </div>
+                        <div class="chat-input">
+                            <p:inputText placeholder="Write here..." />
+                        </div>
+                    </div>
+                </p:tab>
+                <p:tab>
+                    <f:facet name="title">
+                        <i class="pi pi-plus"></i>
+                    </f:facet>
+                    <div class="chat">
+                        <span class="fade"></span>
+                        <div class="contacts">
+                            <ul>
+                                <li>
+                                    <p:graphicImage name="images/rightpanel/profile-1.png" library="demo" />
+                                    <div class="contact-info">
+                                        <h6>John Doe</h6>
+                                        <span>Active</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p:graphicImage name="images/rightpanel/profile-2.png" library="demo" />
+                                    <div class="contact-info">
+                                        <h6>John Doe</h6>
+                                        <span>Active</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p:graphicImage name="images/rightpanel/profile-3.png" library="demo" />
+                                    <div class="contact-info">
+                                        <h6>John Doe</h6>
+                                        <span>Active</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p:graphicImage name="images/rightpanel/profile-4.png" library="demo" />
+                                    <div class="contact-info">
+                                        <h6>John Doe</h6>
+                                        <span>Active</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p:graphicImage name="images/rightpanel/profile-1.png" library="demo" />
+                                    <div class="contact-info">
+                                        <h6>John Doe</h6>
+                                        <span>Active</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p:graphicImage name="images/rightpanel/profile-1.png" library="demo" />
+                                    <div class="contact-info">
+                                        <h6>John Doe</h6>
+                                        <span>Active</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p:graphicImage name="images/rightpanel/profile-1.png" library="demo" />
+                                    <div class="contact-info">
+                                        <h6>John Doe</h6>
+                                        <span>Active</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p:graphicImage name="images/rightpanel/profile-1.png" library="demo" />
+                                    <div class="contact-info">
+                                        <h6>John Doe</h6>
+                                        <span>Active</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p:graphicImage name="images/rightpanel/profile-1.png" library="demo" />
+                                    <div class="contact-info">
+                                        <h6>John Doe</h6>
+                                        <span>Active</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="chat-input">
+                            <p:inputText placeholder="Search new person" />
+                        </div>
+                    </div>
+                </p:tab>
+            </p:tabView>
+          </div>
+        </div>
+    </div>
+
+</ui:composition>

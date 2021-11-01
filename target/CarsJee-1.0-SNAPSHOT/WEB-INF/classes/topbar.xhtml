@@ -1,0 +1,77 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+
+    <div class="layout-topbar">
+        <div class="layout-topbar-wrapper">
+            <div class="layout-topbar-left">
+                <a href="#" class="menu-button">
+                    <i class="pi pi-bars"></i>
+                </a>
+                <h:link id="logolink" outcome="/dashboard" styleClass="layout-topbar-logo">
+                    <p:graphicImage
+                            name="images/#{ guestPreferences.lightLogo ? 'logo-freya-white.svg' : 'logo-freya.svg'}"
+                            library="freya-layout"/>
+                </h:link>
+            </div>
+
+<!--            <ui:include src="./menu.xhtml"/>-->
+
+            <div class="layout-topbar-right">
+                <ul class="layout-topbar-actions">
+                    <li class="topbar-item search-item ">
+                        <a href="#">
+                            <i class="topbar-icon pi pi-search"></i>
+                        </a>
+                        <h:panelGroup styleClass="md-inputfield search-input-wrapper">
+                            <p:inputText placeholder="Search..."/>
+                            <i class="pi pi-search"></i>
+                        </h:panelGroup>
+                        <ul>
+                            <h:form onsubmit="return false;">
+                                <h:panelGroup styleClass="md-inputfield search-input-wrapper">
+                                    <p:inputText placeholder="Search..."/>
+                                    <i class="pi pi-search"></i>
+                                </h:panelGroup>
+                            </h:form>
+                        </ul>
+                    </li>
+                    <li class="topbar-item user-profile">
+                        <a href="#">
+                            <p:graphicImage name="images/avatar-profilemenu.png" library="freya-layout"/>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <span>Profile</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>Settings</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>Messages</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>Notifications</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <a href="#" class="layout-rightpanel-button">
+                    <i class="pi pi-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</ui:composition>
