@@ -6,6 +6,7 @@
 package org.irisi.carsjee.bean;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import jakarta.persistence.Entity;
@@ -32,6 +33,8 @@ public class Car implements Serializable {
     private Fuel fuel;
     @ManyToOne
     private Modele model;
+    private String maker;
+    private BigDecimal mileage;
 
     @OneToMany(mappedBy = "car")
     private List<DemandeLocationDetail> demandeLocationDetails;
@@ -43,10 +46,25 @@ public class Car implements Serializable {
     public void setDemandeLocationDetails(List<DemandeLocationDetail> demandeLocationDetails) {
         this.demandeLocationDetails = demandeLocationDetails;
     }
-    
-    
+
+    public BigDecimal getMileage() {
+        return mileage;
+    }
+
+    public void setMileage(BigDecimal mileage) {
+        this.mileage = mileage;
+    }
+
     @Temporal(jakarta.persistence.TemporalType.DATE)
     private Date dateAchat;
+
+    public String getMaker() {
+        return maker;
+    }
+
+    public void setMaker(String maker) {
+        this.maker = maker;
+    }
 
     public String getMatricule() {
         return matricule;

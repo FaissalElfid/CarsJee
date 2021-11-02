@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CarViewDlg" widgetVar="CarViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewCarTitle}">
+            <h:form id="CarViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{carController.selected != null}">
+                        <h:outputText value="#{bundle.ViewCarLabel_matricule}"/>
+                        <h:outputText value="#{carController.selected.matricule}" title="#{bundle.ViewCarTitle_matricule}"/>
+                        <h:outputText value="#{bundle.ViewCarLabel_dateAchat}"/>
+                        <h:outputText value="#{carController.selected.dateAchat}" title="#{bundle.ViewCarTitle_dateAchat}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewCarLabel_fuel}"/>
+                        <h:outputText value="#{carController.selected.fuel}" title="#{bundle.ViewCarTitle_fuel}"/>
+                        <h:outputText value="#{bundle.ViewCarLabel_model}"/>
+                        <h:outputText value="#{carController.selected.model}" title="#{bundle.ViewCarTitle_model}"/>
+                        <h:outputText value="#{bundle.ViewCarLabel_id}"/>
+                        <h:outputText value="#{carController.selected.id}" title="#{bundle.ViewCarTitle_id}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="CarViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

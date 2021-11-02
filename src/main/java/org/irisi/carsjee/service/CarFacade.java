@@ -5,6 +5,7 @@
  */
 package org.irisi.carsjee.service;
 
+import jakarta.ejb.Stateless;
 import org.irisi.carsjee.bean.Car;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -13,7 +14,7 @@ import jakarta.persistence.PersistenceContext;
  *
  * @author faiss
  */
-@jakarta.ejb.Stateless
+@Stateless
 public class CarFacade extends AbstractFacade<Car> {
 
     @PersistenceContext(unitName = "cars-projectPU")

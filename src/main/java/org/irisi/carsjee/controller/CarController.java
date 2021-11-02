@@ -75,10 +75,9 @@ public class CarController implements Serializable {
     }
 
     public List<Car> getItems() {
-        if (items == null) {
-            items = getFacade().findAll();
-        }
-        return items;
+        return null;
+//        items = getFacade().findAll();
+//        return items;
     }
 
     private void persist(PersistAction persistAction, String successMessage) {

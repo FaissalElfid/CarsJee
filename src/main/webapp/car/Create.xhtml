@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CarCreateDlg" widgetVar="CarCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateCarTitle}">
+            <h:form id="CarCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{carController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateCarLabel_matricule}" for="matricule" />
+                        <p:inputText id="matricule" value="#{carController.selected.matricule}" title="#{bundle.CreateCarTitle_matricule}" />
+                        <p:outputLabel value="#{bundle.CreateCarLabel_dateAchat}" for="dateAchat" />
+                        <p:calendar id="dateAchat" pattern="MM/dd/yyyy" value="#{carController.selected.dateAchat}" title="#{bundle.EditCarTitle_dateAchat}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateCarLabel_fuel}" for="fuel" />
+                        <p:selectOneMenu id="fuel" value="#{carController.selected.fuel}" >
+                            <f:selectItems value="#{fuelController.itemsAvailableSelectOne}"
+                                           var="fuelItem"
+                                           itemValue="#{fuelItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateCarLabel_model}" for="model" />
+                        <p:selectOneMenu id="model" value="#{carController.selected.model}" >
+                            <f:selectItems value="#{modeleController.itemsAvailableSelectOne}"
+                                           var="modelItem"
+                                           itemValue="#{modelItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateCarLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{carController.selected.id}" title="#{bundle.CreateCarTitle_id}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{carController.create}" value="#{bundle.Save}" update="display,:CarListForm:datalist,:growl" oncomplete="handleSubmit(args,'CarCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="CarCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
