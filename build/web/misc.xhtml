@@ -1,0 +1,99 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">Misc</ui:define>
+
+    <ui:define name="head">
+        <script type="text/javascript">
+            $(function() {
+                setInterval(function () {
+                    var pb = PF('pb');
+                    var oldValue = pb.getValue();
+                    var newValue = oldValue + 10;
+
+                    pb.setValue(pb.getValue() + 10);
+
+                    if (newValue === 100) {
+                        clearInterval(window['progress']);
+                    }
+                }, 1000);
+            });
+        </script>
+    </ui:define>
+    
+    <ui:define name="content">
+        <h:form>
+            <div class="p-grid misc-demo">
+                <div class="p-col-12">
+                    <div class="card">
+                        <h5>ProgressBar</h5>
+                        <div class="p-grid">
+                            <div class="p-col">
+                                <p:progressBar widgetVar="pb" />
+                            </div>
+                            <div class="p-col">
+                                <p:progressBar value="50" displayOnly="true" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-col-12">
+                    <div class="card">
+                        <h4>Badge</h4>
+                        <h5>Numbers</h5>
+                        <div class="badges">
+                            <span class="ui-badge">2</span>
+                            <span class="ui-badge ui-badge-success">8</span>
+                            <span class="ui-badge ui-badge-info">4</span>
+                            <span class="ui-badge ui-badge-warning">12</span>
+                            <span class="ui-badge ui-badge-danger">3</span>
+                        </div>
+
+                        <h5>Tags</h5>
+                        <div class="badges">
+                            <span class="ui-tag">Primary</span>
+                            <span class="ui-tag ui-tag-success">Success</span>
+                            <span class="ui-tag ui-tag-info">Info</span>
+                            <span class="ui-tag ui-tag-warning">Warning</span>
+                            <span class="ui-tag ui-tag-danger">Danger</span>
+                        </div>
+
+                        <h5>Pills</h5>
+                        <div class="badges">
+                            <span class="ui-tag ui-tag-rounded">Primary</span>
+                            <span class="ui-tag ui-tag-rounded ui-tag-success">Success</span>
+                            <span class="ui-tag ui-tag-rounded ui-tag-info">Info</span>
+                            <span class="ui-tag ui-tag-rounded ui-tag-warning">Warning</span>
+                            <span class="ui-tag ui-tag-rounded ui-tag-danger">Danger</span>
+                        </div>
+
+                        <h5>Icon Badge</h5>
+                        <span class="ui-overlay-badge">
+                            <i class="pi pi-bell" style="font-size: 2em"></i>
+                            <span class="ui-badge">2</span>
+                        </span>
+
+                        <h5>Button Badge</h5>
+                        <span class="ui-overlay-badge">
+                            <p:commandButton type="button" value="New" />
+                            <span class="ui-badge ui-badge-warning">5</span>
+                        </span>
+
+                        <h5>Sizes</h5>
+                        <div class="badges">
+                            <span class="ui-badge">2</span>
+                            <span class="ui-badge ui-badge-lg ui-badge-sucess">4</span>
+                            <span class="ui-badge ui-badge-xl ui-badge-warning">6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

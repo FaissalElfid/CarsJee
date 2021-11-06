@@ -1,0 +1,791 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">Icons</ui:define>
+
+    <ui:define name="content">
+        <div class="card icons-demo">
+            <h3>Icons</h3>
+            <p>Freya uses PrimeIcons v4.0, PrimeTek's new modern icon library.</p>
+
+            <h5>Getting Started</h5>
+            <p>PrimeIcons use the pi pi-{icon} syntax such as pi pi-check. A standalone icon can be displayed using an element like i or span.</p>
+<pre>
+&lt;i class="pi pi-check"&gt;&lt;/i&gt;
+&lt;i class="pi pi-times"&gt;&lt;/i&gt;
+&lt;i class="pi pi-times"&gt;&lt;/i&gt;
+</pre> 
+
+            <i class="pi pi-check"></i>
+            <i class="pi pi-times"></i>
+
+            <h5>Component Icons</h5>
+            <p>Components that have icon properties accept PrimeIcons with the pi pi-{icon} syntax.</p>
+<pre>
+&lt;p:commandButton type="button" icon="pi pi-check" value="Confirm" /&gt;
+</pre> 
+            <p:commandButton type="button" icon="pi pi-check" value="Confirm" />
+
+            <h5>Size</h5>
+            <p>Size of the icons can easily be changed using font-size property.</p>
+<pre>
+&lt;i class="pi pi-check"&gt;&lt;/i&gt;
+</pre> 
+
+            <i class="pi pi-check"></i>
+<pre>
+&lt;i class="pi pi-check" style="font-size: 2rem"&gt;&lt;/i&gt;
+</pre> 
+            <i class="pi pi-check" style="font-size: 2rem"></i>
+
+            <h5>Spinning Animation</h5>
+            <p>Special pi-spin class applies continuous rotation to an icon.</p>
+<pre>
+&lt;i class="pi pi-spin pi-spinner" style="font-size: 2rem"&gt;&lt;/i&gt;
+</pre> 
+            <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
+
+           <h5>List of Icons</h5>
+            <div class="p-grid icons-list">
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-facebook"></i>
+                    <div>pi-facebook</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-github"></i>
+                    <div>pi-github</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-twitter"></i>
+                    <div>pi-twitter</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-step-backward-alt"></i>
+                    <div>pi-step-backward-alt</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-step-forward-alt"></i>
+                    <div>pi-step-forward-alt</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-forward"></i>
+                    <div>pi-forward</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-backward"></i>
+                    <div>pi-backward</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-fast-backward"></i>
+                    <div>pi-fast-backward</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-fast-forward"></i>
+                    <div>pi-fast-forward</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-pause"></i>
+                    <div>pi-pause</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-play"></i>
+                    <div>pi-play</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-compass"></i>
+                    <div>pi-compass</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-id-card"></i>
+                    <div>pi-id-card</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-ticket"></i>
+                    <div>pi-ticket</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-file-o"></i>
+                    <div>pi-file-o</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-reply"></i>
+                    <div>pi-reply</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-directions-alt"></i>
+                    <div>pi-directions-alt</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-directions"></i>
+                    <div>pi-directions</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-thumbs-up"></i>
+                    <div>pi-thumbs-up</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-thumbs-down"></i>
+                    <div>pi-thumbs-down</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sort-numeric-down-alt"></i>
+                    <div>pi-sort-numeric-down-alt</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sort-numeric-up-alt"></i>
+                    <div>pi-sort-numeric-up-alt</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sort-alpha-down-alt"></i>
+                    <div>pi-sort-alpha-down-alt</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sort-alpha-up-alt"></i>
+                    <div>pi-sort-alpha-up-alt</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sort-numeric-down"></i>
+                    <div>pi-sort-numeric-down</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sort-numeric-up"></i>
+                    <div>pi-sort-numeric-up</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sort-alpha-down"></i>
+                    <div>pi-sort-alpha-down</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sort-alpha-up"></i>
+                    <div>pi-sort-alpha-up</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sort-alt"></i>
+                    <div>pi-sort-alt</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sort-amount-up"></i>
+                    <div>pi-sort-amount-up</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sort-amount-down"></i>
+                    <div>pi-sort-amount-down</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sort-amount-down-alt"></i>
+                    <div>pi-sort-amount-down-alt</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sort-amount-up-alt"></i>
+                    <div>pi-sort-amount-up-alt</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-palette"></i>
+                    <div>pi-palette</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-undo"></i>
+                    <div>pi-undo</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-desktop"></i>
+                    <div>pi-desktop</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sliders-v"></i>
+                    <div>pi-sliders-v</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sliders-h"></i>
+                    <div>pi-sliders-h</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-search-plus"></i>
+                    <div>pi-search-plus</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-search-minus"></i>
+                    <div>pi-search-minus</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-file-excel"></i>
+                    <div>pi-file-excel</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-file-pdf"></i>
+                    <div>pi-file-pdf</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-check-square"></i>
+                    <div>pi-check-square</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-chart-line"></i>
+                    <div>pi-chart-line</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-user-edit"></i>
+                    <div>pi-user-edit</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-exclamation-circle"></i>
+                    <div>pi-exclamation-circle</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-android"></i>
+                    <div>pi-android</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-google"></i>
+                    <div>pi-google</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-apple"></i>
+                    <div>pi-apple</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-microsoft"></i>
+                    <div>pi-microsoft</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-heart"></i>
+                    <div>pi-heart</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-mobile"></i>
+                    <div>pi-mobile</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-tablet"></i>
+                    <div>pi-tablet</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-key"></i>
+                    <div>pi-key</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-shopping-cart"></i>
+                    <div>pi-shopping-cart</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-comments"></i>
+                    <div>pi-comments</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-comment"></i>
+                    <div>pi-comment</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-briefcase"></i>
+                    <div>pi-briefcase</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-bell"></i>
+                    <div>pi-bell</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-paperclip"></i>
+                    <div>pi-paperclip</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-share-alt"></i>
+                    <div>pi-share-alt</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-envelope"></i>
+                    <div>pi-envelope</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-volume-down"></i>
+                    <div>pi-volume-down</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-volume-up"></i>
+                    <div>pi-volume-up</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-volume-off"></i>
+                    <div>pi-volume-off</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-eject"></i>
+                    <div>pi-eject</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-money-bill"></i>
+                    <div>pi-money-bill</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-images"></i>
+                    <div>pi-images</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-image"></i>
+                    <div>pi-image</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sign-in"></i>
+                    <div>pi-sign-in</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sign-out"></i>
+                    <div>pi-sign-out</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-wifi"></i>
+                    <div>pi-wifi</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sitemap"></i>
+                    <div>pi-sitemap</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-chart-bar"></i>
+                    <div>pi-chart-bar</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-camera"></i>
+                    <div>pi-camera</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-dollar"></i>
+                    <div>pi-dollar</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-lock-open"></i>
+                    <div>pi-lock-open</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-table"></i>
+                    <div>pi-table</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-map-marker"></i>
+                    <div>pi-map-marker</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-list"></i>
+                    <div>pi-list</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-eye-slash"></i>
+                    <div>pi-eye-slash</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-eye"></i>
+                    <div>pi-eye</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-folder-open"></i>
+                    <div>pi-folder-open</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-folder"></i>
+                    <div>pi-folder</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-video"></i>
+                    <div>pi-video</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-inbox"></i>
+                    <div>pi-inbox</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-lock"></i>
+                    <div>pi-lock</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-unlock"></i>
+                    <div>pi-unlock</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-tags"></i>
+                    <div>pi-tags</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-tag"></i>
+                    <div>pi-tag</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-power-off"></i>
+                    <div>pi-power-off</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-save"></i>
+                    <div>pi-save</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-question-circle"></i>
+                    <div>pi-question-circle</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-question"></i>
+                    <div>pi-question</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-copy"></i>
+                    <div>pi-copy</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-file"></i>
+                    <div>pi-file</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-clone"></i>
+                    <div>pi-clone</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-calendar-times"></i>
+                    <div>pi-calendar-times</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-calendar-minus"></i>
+                    <div>pi-calendar-minus</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-calendar-plus"></i>
+                    <div>pi-calendar-plus</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-ellipsis-v"></i>
+                    <div>pi-ellipsis-v</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-ellipsis-h"></i>
+                    <div>pi-ellipsis-h</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-bookmark"></i>
+                    <div>pi-bookmark</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-globe"></i>
+                    <div>pi-globe</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-replay"></i>
+                    <div>pi-replay</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-filter"></i>
+                    <div>pi-filter</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-print"></i>
+                    <div>pi-print</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-align-right"></i>
+                    <div>pi-align-right</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-align-left"></i>
+                    <div>pi-align-left</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-align-center"></i>
+                    <div>pi-align-center</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-align-justify"></i>
+                    <div>pi-align-justify</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-cog"></i>
+                    <div>pi-cog</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-cloud-download"></i>
+                    <div>pi-cloud-download</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-cloud-upload"></i>
+                    <div>pi-cloud-upload</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-cloud"></i>
+                    <div>pi-cloud</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-pencil"></i>
+                    <div>pi-pencil</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-users"></i>
+                    <div>pi-users</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-clock"></i>
+                    <div>pi-clock</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-user-minus"></i>
+                    <div>pi-user-minus</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-user-plus"></i>
+                    <div>pi-user-plus</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-trash"></i>
+                    <div>pi-trash</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-window-minimize"></i>
+                    <div>pi-window-minimize</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-window-maximize"></i>
+                    <div>pi-window-maximize</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-external-link"></i>
+                    <div>pi-external-link</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-refresh"></i>
+                    <div>pi-refresh</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-user"></i>
+                    <div>pi-user</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-exclamation-triangle"></i>
+                    <div>pi-exclamation-triangle</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-calendar"></i>
+                    <div>pi-calendar</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-chevron-circle-left"></i>
+                    <div>pi-chevron-circle-left</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-chevron-circle-down"></i>
+                    <div>pi-chevron-circle-down</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-chevron-circle-right"></i>
+                    <div>pi-chevron-circle-right</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-chevron-circle-up"></i>
+                    <div>pi-chevron-circle-up</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-angle-double-down"></i>
+                    <div>pi-angle-double-down</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-angle-double-left"></i>
+                    <div>pi-angle-double-left</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-angle-double-right"></i>
+                    <div>pi-angle-double-right</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-angle-double-up"></i>
+                    <div>pi-angle-double-up</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-angle-down"></i>
+                    <div>pi-angle-down</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-angle-left"></i>
+                    <div>pi-angle-left</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-angle-right"></i>
+                    <div>pi-angle-right</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-angle-up"></i>
+                    <div>pi-angle-up</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-upload"></i>
+                    <div>pi-upload</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-download"></i>
+                    <div>pi-download</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-ban"></i>
+                    <div>pi-ban</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-star-o"></i>
+                    <div>pi-star-o</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-star"></i>
+                    <div>pi-star</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-chevron-left"></i>
+                    <div>pi-chevron-left</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-chevron-right"></i>
+                    <div>pi-chevron-right</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-chevron-down"></i>
+                    <div>pi-chevron-down</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-chevron-up"></i>
+                    <div>pi-chevron-up</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-caret-left"></i>
+                    <div>pi-caret-left</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-caret-right"></i>
+                    <div>pi-caret-right</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-caret-down"></i>
+                    <div>pi-caret-down</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-caret-up"></i>
+                    <div>pi-caret-up</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-search"></i>
+                    <div>pi-search</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-check"></i>
+                    <div>pi-check</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-check-circle"></i>
+                    <div>pi-check-circle</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-times"></i>
+                    <div>pi-times</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-times-circle"></i>
+                    <div>pi-times-circle</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-plus"></i>
+                    <div>pi-plus</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-plus-circle"></i>
+                    <div>pi-plus-circle</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-minus"></i>
+                    <div>pi-minus</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-minus-circle"></i>
+                    <div>pi-minus-circle</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-circle-on"></i>
+                    <div>pi-circle-on</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-circle-off"></i>
+                    <div>pi-circle-off</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sort-down"></i>
+                    <div>pi-sort-down</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sort-up"></i>
+                    <div>pi-sort-up</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-sort"></i>
+                    <div>pi-sort</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-step-backward"></i>
+                    <div>pi-step-backward</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-step-forward"></i>
+                    <div>pi-step-forward</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-th-large"></i>
+                    <div>pi-th-large</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-arrow-down"></i>
+                    <div>pi-arrow-down</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-arrow-left"></i>
+                    <div>pi-arrow-left</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-arrow-right"></i>
+                    <div>pi-arrow-right</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-arrow-up"></i>
+                    <div>pi-arrow-up</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-bars"></i>
+                    <div>pi-bars</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-arrow-circle-down"></i>
+                    <div>pi-arrow-circle-down</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-arrow-circle-left"></i>
+                    <div>pi-arrow-circle-left</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-arrow-circle-right"></i>
+                    <div>pi-arrow-circle-right</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-arrow-circle-up"></i>
+                    <div>pi-arrow-circle-up</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-info"></i>
+                    <div>pi-info</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-info-circle"></i>
+                    <div>pi-info-circle</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-home"></i>
+                    <div>pi-home</div>
+                </div>
+                <div class="p-col-12 p-md-2">
+                    <i class="pi pi-spinner"></i>
+                    <div>pi-spinner</div>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>

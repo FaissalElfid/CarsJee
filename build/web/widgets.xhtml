@@ -1,0 +1,555 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui"
+    template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">Widgets</ui:define>
+
+
+    <ui:define name="head">
+       
+    </ui:define>
+
+    <ui:define name="content">
+        <h:form>
+            <div class="layout-widgets">
+                <div class="p-grid">
+                    <div class="p-col-12 p-md-6 p-lg-3">
+                        <div class="card overview-box white">
+                            <div class="overview-info">
+                                <h6>Graphics</h6>
+                                <h1>18%</h1>
+                            </div>
+                            <i class="pi pi-image"></i>
+                        </div>
+                    </div> 
+                    <div class="p-col-12 p-md-6 p-lg-3">
+                        <div class="card overview-box blue">
+                            <div class="overview-info">
+                                <h6>New users (Today)</h6>
+                                <h1>32</h1>
+                            </div>
+                            <i class="pi pi-users"></i>
+                        </div>
+                    </div> 
+                    <div class="p-col-12 p-md-6 p-lg-3">
+                        <div class="card overview-box gray">
+                            <div class="overview-info">
+                                <h6>Uptime</h6>
+                                <h1>5h12m</h1>
+                            </div>
+                            <i class="pi pi-globe"></i>
+                        </div>
+                    </div> 
+                    <div class="p-col-12 p-md-6 p-lg-3">
+                        <div class="card overview-box darkgray">
+                            <div class="overview-info">
+                                <h6>Cloud users</h6>
+                                <h1>4216</h1>
+                            </div>
+                            <i class="pi pi-cloud"></i>
+                        </div>
+                    </div> 
+                    <div class="p-col-12 p-lg-6">
+                        <div class="p-grid">
+                            <div class="p-col-12">
+                                <div class="card statistics">
+                                    <div class="card-header">
+                                        <div class="card-title">
+                                            <h6>Statistics</h6>
+                                            <p class="subtitle">Europe 1</p>
+                                        </div>
+                                        <p class="subtitle">8 May</p>
+                                    </div>
+                                    <div class="p-grid">
+                                        <div class="p-col-12 p-md-6">
+                                            <div class="statistic-item">
+                                                <div class="item-title">
+                                                    <span>🐳</span>
+                                                    <h5>99,99%</h5>
+                                                </div>
+                                                <h6>Uptime/year</h6>
+                                            </div>
+                                        </div>
+                                        <div class="p-col-12 p-md-6">
+                                            <div class="statistic-item">
+                                                <div class="item-title">
+                                                    <span>🖥 </span>
+                                                    <h5>2K</h5>
+                                                </div>
+                                                <h6>Connected devices</h6>
+                                            </div>
+                                        </div>
+                                        <div class="p-col-12 p-md-6">
+                                            <div class="statistic-item">
+                                                <div class="item-title">
+                                                    <span>🎁 </span>
+                                                    <h5>244</h5>
+                                                </div>
+                                                <h6>Thanks messages received</h6>
+                                            </div>
+                                        </div>
+                                        <div class="p-col-12 p-md-6">
+                                            <div class="statistic-item">
+                                                <div class="item-title">
+                                                    <span>💵 </span>
+                                                    <h5>4812$</h5>
+                                                </div>
+                                                <h6>Earnings/month</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-col-12">
+                                <div class="card team">
+                                    <div class="card-header">
+                                        <div class="card-title">
+                                            <h6>Team</h6>
+                                            <p class="subtitle">22 People</p>
+                                        </div>
+                                    </div>
+                                    <div class="peoples">
+                                        <p:graphicImage name="images/dashboard/avatar/avatar-1.png" library="demo" />
+                                        <p:graphicImage name="images/dashboard/avatar/avatar-2.png" library="demo" />
+                                        <p:graphicImage name="images/dashboard/avatar/avatar-3.png" library="demo" />
+                                        <p:graphicImage name="images/dashboard/avatar/avatar-4.png" library="demo" />
+                                        <p:graphicImage name="images/dashboard/avatar/avatar-5.png" library="demo" />
+                                        <p:graphicImage name="images/dashboard/avatar/avatar-6.png" library="demo" />
+                                        <div class="no-picture" style="background: #BAE6FF;"><span>AT</span></div>
+                                        <p:graphicImage name="images/dashboard/avatar/avatar-7.png" library="demo" />
+                                        <p:graphicImage name="images/dashboard/avatar/avatar-7.png" library="demo" />
+                                        <div class="more-people"><span>+18</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-col-12">
+                                <div class="notification">
+                                    <h6>👋  Hello! Welcome to Hit! Before start please complete your profile to know you better. <a href="#">Profile settings <i class="pi pi-arrow-up"></i></a></h6>
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div> 
+                    <div class="p-col-12 p-lg-6">
+                        <div class="card stocks">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <h6>👓 Stock watchlist (12)</h6>
+                                    <p class="subtitle">Today</p>
+                                </div>
+                                <p:commandButton type="button" icon="pi pi-plus" styleClass="secondary-button text-button rounded-button" />
+                            </div>
+                            <ul>
+                                <li class="down">
+                                    <div class="stock-name">
+                                        <h6>AMD</h6>
+                                    </div>
+                                    <p:graphicImage name="images/dashboard/mini-graph-1.svg" library="demo" />
+                                    <div class="stock-price">
+                                        <i class="pi pi-arrow-down"></i>
+                                        <h6>54.20</h6>
+                                    </div>
+                                    <div class="stock-status">
+                                        <span>0.57%</span>
+                                        <span>4.01</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="stock-name">
+                                        <h6>MSFT</h6>
+                                    </div>
+                                    <p:graphicImage name="images/dashboard/mini-graph-2.svg" library="demo" />
+                                    <div class="stock-price">
+                                        <i class="pi pi-arrow-down"></i>
+                                        <h6>183.16</h6>
+                                    </div>
+                                    <div class="stock-status">
+                                        <span>1.46%</span>
+                                        <span>4.01</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="stock-name">
+                                        <h6>AAPL</h6>
+                                    </div>
+                                    <p:graphicImage name="images/dashboard/mini-graph-3.svg" library="demo" />
+                                    <div class="stock-price">
+                                        <i class="pi pi-arrow-down"></i>
+                                        <h6>307.20</h6>
+                                    </div>
+                                    <div class="stock-status">
+                                        <span>0.59%</span>
+                                        <span>4.01</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="stock-name">
+                                        <h6>TSLA</h6>
+                                    </div>
+                                    <p:graphicImage name="images/dashboard/mini-graph-4.svg" library="demo" />
+                                    <div class="stock-price">
+                                        <i class="pi pi-arrow-down"></i>
+                                        <h6>799.17</h6>
+                                    </div>
+                                    <div class="stock-status">
+                                        <span>0.52%</span>
+                                        <span>4.01</span>
+                                    </div>
+                                </li>
+                                <li class="same">
+                                    <div class="stock-name">
+                                        <h6>AMZN</h6>
+                                    </div>
+                                    <p:graphicImage name="images/dashboard/mini-graph-5.svg" library="demo" />
+                                    <div class="stock-price">
+                                        <i class="pi pi-arrow-down"></i>
+                                        <h6>799.17</h6>
+                                    </div>
+                                    <div class="stock-status">
+                                        <span>0.52%</span>
+                                        <span>4.01</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <a href="#">Show all</a>
+                            <p:commandButton type="button" value="Go to full stock page" styleClass="primary-button " />
+                        </div>
+                    </div> 
+                    <div class="p-col-12  p-md-3">
+                        <div class="card map">
+                            <p:graphicImage name="images/dashboard/asset-map.png" library="demo" />
+                            <div class="map-content">
+                                <h6>Last active region (data traffic)</h6>
+                                <div class="city">
+                                    <span><span>1</span> Tokio</span>
+                                    <span class="status">22%</span>
+                                </div>
+                                <div class="city">
+                                    <span><span>2</span> London</span>
+                                    <span class="status">22%</span>
+                                </div>
+                                <a href="#">See all</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-col-12  p-md-6">
+                        <div class="card chat">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <h6>Chat</h6>
+                                </div>
+                            </div>
+                            <p:tabView>
+                                <p:tab>
+                                    <f:facet name="title">
+                                        <p:graphicImage name="images/rightpanel/profile-1.png" library="demo" />
+                                        <span class="ui-badge">3</span>
+                                    </f:facet>
+                                    <div class="chat">
+                                        <span class="fade"></span>
+                                        <div class="chat-content">
+                                            <div class="chat-message send">
+                                                <span class="name">You</span>
+                                                <div class="message">
+                                                    <p>Hey M. hope you are well. Our idea is accepted by the board. Now it’s time to execute it.</p>
+                                                    <span>3 mins ago</span>
+                                                </div>
+                                                <div class="message">
+                                                    <p>we did it! 🤠</p>
+                                                    <span>3 mins ago</span>
+                                                </div>
+                                            </div>
+                                            <div class="chat-message">
+                                                <span class="name">Micheal J.</span>
+                                                <div class="message">
+                                                    <p>That’s really good!</p>
+                                                    <span>3 mins ago</span>
+                                                </div>
+                                            </div>
+                                            <div class="chat-message send">
+                                                <span class="name">You</span>
+                                                <div class="message">
+                                                    <p>But it’s important to ship MVP ASAP</p>
+                                                    <span>3 mins ago</span>
+                                                </div>
+                                            </div>
+                                            <div class="chat-message">
+                                                <span class="name">Micheal J.</span>
+                                                <div class="message">
+                                                    <p>I’ll be looking at the process then, just to be sure 🤓 </p>
+                                                    <span>3 mins ago</span>
+                                                </div>
+                                            </div>
+                                            <div class="chat-message send">
+                                                <span class="name">You</span>
+                                                <div class="message">
+                                                    <p>That’s awesome. Thanks!</p>
+                                                    <span>3 mins ago</span>
+                                                </div>
+                                            </div>
+                                            <div class="chat-message">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="chat-input">
+                                            <p:inputText placeholder="Write here..." />
+                                        </div>
+                                    </div>
+                                </p:tab>
+                                <p:tab>
+                                    <f:facet name="title">
+                                        <p:graphicImage name="images/rightpanel/profile-2.png" library="demo" />
+                                        <span class="ui-badge">1</span>
+                                    </f:facet>
+                                    <div class="chat">
+                                        <span class="fade"></span>
+                                        <div class="chat-content">
+                                            <div class="chat-message">
+                                                <span class="name">Sarah</span>
+                                                <div class="message">
+                                                    <p>That’s really good!</p>
+                                                    <span>3 mins ago</span>
+                                                </div>
+                                            </div>
+                                            <div class="chat-message send">
+                                                <span class="name">You</span>
+                                                <div class="message">
+                                                    <p>But it’s important to ship MVP ASAP</p>
+                                                    <span>3 mins ago</span>
+                                                </div>
+                                            </div>
+                                            <div class="chat-message">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="chat-input">
+                                            <p:inputText placeholder="Write here..." />
+                                        </div>
+                                    </div>
+                                </p:tab>
+                                <p:tab>
+                                    <f:facet name="title">
+                                        <p:graphicImage name="images/rightpanel/profile-3.png" library="demo" />
+                                    </f:facet>
+                                    <div class="chat">
+                                        <div class="chat-content no-message">
+                                            <h4>No Message From Margret K.</h4>
+                                        </div>
+                                        <div class="chat-input">
+                                            <p:inputText placeholder="Write here..." />
+                                        </div>
+                                    </div>
+                                    
+                                </p:tab>
+                                <p:tab>
+                                    <f:facet name="title">
+                                        <p:graphicImage name="images/rightpanel/profile-4.png" library="demo" />
+                                    </f:facet>
+                                    <div class="chat">
+                                        <div class="chat-content no-message">
+                                            <h4>No Message From Bob C.</h4>
+                                        </div>
+                                        <div class="chat-input">
+                                            <p:inputText placeholder="Write here..." />
+                                        </div>
+                                    </div>
+                                </p:tab>
+                                <p:tab>
+                                    <f:facet name="title">
+                                        <i class="pi pi-plus"></i>
+                                    </f:facet>
+                                    <div class="chat">
+                                        <span class="fade"></span>
+                                        <div class="contacts">
+                                            <ul>
+                                                <li>
+                                                    <p:graphicImage name="images/rightpanel/profile-1.png" library="demo" />
+                                                    <div class="contact-info">
+                                                        <h6>John Doe</h6>
+                                                        <span>Active</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p:graphicImage name="images/rightpanel/profile-2.png" library="demo" />
+                                                    <div class="contact-info">
+                                                        <h6>John Doe</h6>
+                                                        <span>Active</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p:graphicImage name="images/rightpanel/profile-3.png" library="demo" />
+                                                    <div class="contact-info">
+                                                        <h6>John Doe</h6>
+                                                        <span>Active</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p:graphicImage name="images/rightpanel/profile-4.png" library="demo" />
+                                                    <div class="contact-info">
+                                                        <h6>John Doe</h6>
+                                                        <span>Active</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p:graphicImage name="images/rightpanel/profile-1.png" library="demo" />
+                                                    <div class="contact-info">
+                                                        <h6>John Doe</h6>
+                                                        <span>Active</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p:graphicImage name="images/rightpanel/profile-1.png" library="demo" />
+                                                    <div class="contact-info">
+                                                        <h6>John Doe</h6>
+                                                        <span>Active</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p:graphicImage name="images/rightpanel/profile-1.png" library="demo" />
+                                                    <div class="contact-info">
+                                                        <h6>John Doe</h6>
+                                                        <span>Active</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p:graphicImage name="images/rightpanel/profile-1.png" library="demo" />
+                                                    <div class="contact-info">
+                                                        <h6>John Doe</h6>
+                                                        <span>Active</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p:graphicImage name="images/rightpanel/profile-1.png" library="demo" />
+                                                    <div class="contact-info">
+                                                        <h6>John Doe</h6>
+                                                        <span>Active</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="chat-input">
+                                            <p:inputText placeholder="Search new person" />
+                                        </div>
+                                    </div>
+                                </p:tab>
+                            </p:tabView>
+                        </div>
+                    </div>
+                    <div class="p-col-12  p-md-3">
+                        <div class="card image-card">
+                            <span class="ui-badge">3</span>
+                            <p:graphicImage name="images/dashboard/asset-image.jpg" library="demo" />
+                            <div class="image-content">
+                                <h6>Shared team pictures</h6>
+                               <p>Work can be overwhelming, so we need to take time and do activities. See who is doing in other officess!</p>
+                               <p:commandButton type="button" value="Aww, let me see them!" styleClass="primary-button " />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-lg-6">
+                        <div class="card timeline">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <h6>Timeline</h6>
+                                    <p class="subtitle">All servers</p>
+                                </div>
+                            </div>
+                            <ul>
+                                <li class="blue">
+                                    <i class="pi pi-circle-on"></i>
+                                    <div class="event-content">
+                                        <span class="event-title">New Sale</span>
+                                        <span>Richard Jones has purchased a blue t-shirt for $79.</span>
+                                        <span class="time">3 mins ago</span>
+                                    </div>
+                                </li>
+                                <li class="blue">
+                                    <i class="pi pi-circle-on"></i>
+                                    <div class="event-content">
+                                        <span class="event-title">Log</span>
+                                        <span>AWS settings are updated by admin@freya.com</span>
+                                        <span class="time">12 mins ago</span>
+                                    </div>
+                                </li>
+                                <li class="green">
+                                    <i class="pi pi-circle-on"></i>
+                                    <div class="event-content">
+                                        <span class="event-title">Capacity</span>
+                                        <span>Reached 80% CPU capacity in Ireland. Automatic
+                                            capacity increase initiated.</span>
+                                        <span class="time">1:30PM</span>
+                                    </div>
+                                </li>
+                                <li class="orange">
+                                    <i class="pi pi-circle-on"></i>
+                                    <div class="event-content">
+                                        <span class="event-title">Capacity</span>
+                                        <span>Reached 60% CPU capacity in Ireland.</span>
+                                        <span class="time">9:40AM</span>
+                                    </div>
+                                </li>
+                                <li class="blue">
+                                    <i class="pi pi-circle-on"></i>
+                                    <div class="event-content">
+                                        <span class="event-title">Billing</span>
+                                        <span>Upgraded plan, 10users yearly to 20users yearly</span>
+                                        <span class="time">7:42AM</span>
+                                    </div>
+                                </li>
+                                <li class="blue">
+                                    <i class="pi pi-circle-on"></i>
+                                    <div class="event-content">
+                                        <span class="event-title">New Sale</span>
+                                        <span>Richard Jones has purchased a blue t-shirt for $79.</span>
+                                        <span class="time">3 mins ago</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <a href="#">See all</a>
+                        </div>
+                    </div> 
+                    <div class="p-col-12 p-lg-6">
+                        <div class="card schedule">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <h6>Schedule</h6>
+                                    <p class="subtitle">Europe office</p>
+                                </div>
+                                <p class="subtitle">Today</p>
+                            </div>
+                            <p>3 events, 3h 30m</p>
+                            <ul>
+                                <li>
+                                    <div class="schedule-header">
+                                        <h6>Daily talks over Zoom w/ teamA</h6>
+                                        <span>8:00 - 9:00</span>
+                                    </div>
+                                    <a href="#">Join over Zoom</a>
+                                    <span>6 participiants (4 accepted)</span>
+                                </li>
+                                <li>
+                                    <div class="schedule-header">
+                                        <h6>New Project Kick, v1</h6>
+                                        <span>8:00 - 9:00</span>
+                                    </div>
+                                    <a href="#">Join over Zoom</a>
+                                    <span>3 participiants (all accepted)</span>
+                                </li>
+                                <li>
+                                    <div class="schedule-header">
+                                        <h6>Grooming btw TeamA and SR1E</h6>
+                                        <span>8:00 - 9:00</span>
+                                    </div>
+                                    <a href="#">Master room</a>
+                                    <span>12 participiants (11 accepted)</span>
+                                </li>
+                            </ul>
+                            <a href="#">Go to full schedule</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

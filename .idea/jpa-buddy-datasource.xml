@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="JpbDataSourceConfig">
-    <data-source-infos>
-      <data-source-info id="52540bf1-5f30-4ce3-8d41-971893c0bf41" persistence-unit-name="cars-projectPU" />
-    </data-source-infos>
-  </component>
-</project>

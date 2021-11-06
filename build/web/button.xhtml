@@ -1,0 +1,164 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+    
+    <ui:define name="title">Button</ui:define>
+
+    <ui:define name="content">
+        <h:form>
+            <div class="p-grid button-demo">
+                <div class="p-col-12 p-md-6">
+                    <div class="card">
+                        <h5>Default</h5>
+                        <p:commandButton type="button" value="Submit" styleClass="p-mr-2 p-mb-2" />
+                        <p:commandButton type="button"  value="Disabled" disabled="true" />
+                    </div>
+
+                    <div class="card">
+                        <h5>Severities</h5>
+                        <p:commandButton type="button" value="Primary" styleClass="p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Secondary" styleClass="secondary-button p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Success" styleClass="success-button p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Warning" styleClass="warning-button p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Info" styleClass="info-button p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Help" styleClass="help-button p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Danger" styleClass="danger-button p-mr-2 p-mb-2" />
+                    </div>
+
+                    <div class="card">
+                        <h5>Text</h5>
+                        <p:commandButton type="button" value="Primary" styleClass="text-button p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Secondary" styleClass="secondary-button text-button p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Success" styleClass="success-button text-button  p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Warning" styleClass="warning-button text-button  p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Info" styleClass="info-button text-button  p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Help" styleClass="help-button text-button  p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Danger" styleClass="danger-button text-button  p-mr-2 p-mb-2" />
+                    </div>
+
+                    <div class="card">
+                        <h5>Outlined</h5>
+                        <p:commandButton type="button" value="Primary" styleClass="outlined-button p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Secondary" styleClass="secondary-button outlined-button p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Success" styleClass="success-button outlined-button  p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Warning" styleClass="warning-button outlined-button  p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Info" styleClass="info-button outlined-button  p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Help" styleClass="help-button outlined-button  p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Danger" styleClass="danger-button outlined-button  p-mr-2 p-mb-2" />
+                    </div>
+
+                    <div class="card">
+                        <h5>Button Group</h5>
+                        <div class="ui-button-group">
+                            <p:commandButton type="button" icon="pi pi-check" value="Save" />
+                            <p:commandButton type="button" icon="pi pi-trash" value="Delete" />
+                            <p:commandButton type="button" icon="pi pi-times" value="Cancel" />
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h5>SplitButton</h5>
+                        <p:splitButton value="Save" icon="pi pi-check" appendTo="@this" styleClass="p-mr-2 p-mb-2">
+                            <p:menuitem value="Update" url="#" icon="pi pi-refresh" />
+                            <p:menuitem value="Delete" url="#" icon="pi pi-trash" />
+                            <p:separator />
+                            <p:menuitem value="Home" icon="pi pi-home" outcome="dashboard" />
+                        </p:splitButton>
+                        <p:splitButton value="Save" icon="pi pi-check" appendTo="@this" styleClass="success-button p-mr-2 p-mb-2">
+                            <p:menuitem value="Update" url="#" icon="pi pi-refresh" />
+                            <p:menuitem value="Delete" url="#" icon="pi pi-trash" />
+                            <p:separator />
+                            <p:menuitem value="Home" icon="pi pi-home" outcome="dashboard" />
+                        </p:splitButton>
+                        <p:splitButton value="Save" icon="pi pi-check" appendTo="@this" styleClass="warning-button p-mr-2 p-mb-2">
+                            <p:menuitem value="Update" url="#" icon="pi pi-refresh" />
+                            <p:menuitem value="Delete" url="#" icon="pi pi-trash" />
+                            <p:separator />
+                            <p:menuitem value="Home" icon="pi pi-home" outcome="dashboard" />
+                        </p:splitButton>
+                        <p:splitButton value="Save" icon="pi pi-check" appendTo="@this" styleClass="help-button p-mr-2 p-mb-2">
+                            <p:menuitem value="Update" url="#" icon="pi pi-refresh" />
+                            <p:menuitem value="Delete" url="#" icon="pi pi-trash" />
+                            <p:separator />
+                            <p:menuitem value="Home" icon="pi pi-home" outcome="dashboard" />
+                        </p:splitButton>
+                        <p:splitButton value="Save" icon="pi pi-check" appendTo="@this" styleClass="danger-button">
+                            <p:menuitem value="Update" url="#" icon="pi pi-refresh" />
+                            <p:menuitem value="Delete" url="#" icon="pi pi-trash" />
+                            <p:separator />
+                            <p:menuitem value="Home" icon="pi pi-home" outcome="dashboard" />
+                        </p:splitButton>
+                    </div>
+                </div>
+
+                <div class="p-col-12 p-md-6">
+                    <div class="card">
+                        <h5>Icons</h5>
+                        <p:commandButton type="button" icon="pi pi-star" styleClass="p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Bookmark" icon="pi pi-bookmark" styleClass="p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Bookmark" icon="pi pi-bookmark" iconPos="right" />
+                    </div>
+
+                    <div class="card">
+                        <h5>Raised</h5>
+                        <p:commandButton type="button" value="Primary" styleClass="raised-button p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Secondary" styleClass="secondary-button raised-button p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Success" styleClass="success-button raised-button p-mr-2 p-mb-2"/>
+                        <p:commandButton type="button" value="Warning" styleClass="warning-button raised-button p-mr-2 p-mb-2"/>
+                        <p:commandButton type="button" value="Info" styleClass="info-button raised-button p-mr-2 p-mb-2"/>
+                        <p:commandButton type="button" value="Help" styleClass="help-button raised-button p-mr-2 p-mb-2"/>
+                        <p:commandButton type="button" value="Danger" styleClass="danger-button raised-button p-mr-2 p-mb-2"/>
+                    </div>
+
+                    <div class="card">
+                        <h5>Rounded</h5>
+                        <p:commandButton type="button" value="Primary" styleClass="rounded-button p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Secondary" styleClass="secondary-button rounded-button p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" value="Success" styleClass="success-button rounded-button p-mr-2 p-mb-2"/>
+                        <p:commandButton type="button" value="Warning" styleClass="warning-button rounded-button p-mr-2 p-mb-2"/>
+                        <p:commandButton type="button" value="Info" styleClass="info-button rounded-button p-mr-2 p-mb-2"/>    
+                        <p:commandButton type="button" value="Help" styleClass="help-button rounded-button p-mr-2 p-mb-2"/>                            
+                        <p:commandButton type="button" value="Danger" styleClass="danger-button rounded-button p-mr-2 p-mb-2"/>
+                    </div>
+
+                    <div class="card">
+                        <h5>Rounded Icons</h5>
+                        <p:commandButton type="button" icon="pi pi-star" styleClass="rounded-button p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" icon="pi pi-bookmark" styleClass="secondary-button rounded-button p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" icon="pi pi-check" styleClass="success-button rounded-button p-mr-2 p-mb-2"/>
+                        <p:commandButton type="button" icon="pi pi-user" styleClass="warning-button rounded-button p-mr-2 p-mb-2"/>
+                        <p:commandButton type="button" icon="pi pi-search" styleClass="info-button rounded-button p-mr-2 p-mb-2"/>    
+                        <p:commandButton type="button" icon="pi pi-heart" styleClass="help-button rounded-button p-mr-2 p-mb-2"/>                            
+                        <p:commandButton type="button" icon="pi pi-sign-out" styleClass="danger-button rounded-button p-mr-2 p-mb-2"/>
+                    </div>
+
+                    <div class="card">
+                        <h5>Rounded Text</h5>
+                        <p:commandButton type="button" icon="pi pi-star" styleClass="rounded-button text-button p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" icon="pi pi-bookmark" styleClass="secondary-button text-button rounded-button p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" icon="pi pi-check" styleClass="success-button text-button rounded-button p-mr-2 p-mb-2"/>
+                        <p:commandButton type="button" icon="pi pi-user" styleClass="warning-button text-button rounded-button p-mr-2 p-mb-2"/>
+                        <p:commandButton type="button" icon="pi pi-search" styleClass="info-button text-button rounded-button p-mr-2 p-mb-2"/>    
+                        <p:commandButton type="button" icon="pi pi-heart" styleClass="help-button text-button rounded-button p-mr-2 p-mb-2"/>                            
+                        <p:commandButton type="button" icon="pi pi-sign-out" styleClass="danger-button text-button rounded-button p-mr-2 p-mb-2"/>
+                    </div>
+
+                    <div class="card">
+                        <h5>Rounded Outlined</h5>
+                        <p:commandButton type="button" icon="pi pi-star" styleClass="rounded-button outlined-button p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" icon="pi pi-bookmark" styleClass="secondary-button outlined-button rounded-button p-mr-2 p-mb-2" />
+                        <p:commandButton type="button" icon="pi pi-check" styleClass="success-button outlined-button rounded-button p-mr-2 p-mb-2"/>
+                        <p:commandButton type="button" icon="pi pi-user" styleClass="warning-button outlined-button rounded-button p-mr-2 p-mb-2"/>
+                        <p:commandButton type="button" icon="pi pi-search" styleClass="info-button outlined-button rounded-button p-mr-2 p-mb-2"/>    
+                        <p:commandButton type="button" icon="pi pi-heart" styleClass="help-button outlined-button rounded-button p-mr-2 p-mb-2"/>                            
+                        <p:commandButton type="button" icon="pi pi-sign-out" styleClass="danger-button outlined-button rounded-button p-mr-2 p-mb-2"/>
+                    </div>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

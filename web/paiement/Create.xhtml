@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="PaiementCreateDlg" widgetVar="PaiementCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreatePaiementTitle}">
+            <h:form id="PaiementCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{paiementController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreatePaiementLabel_reference}" for="reference" />
+                        <p:inputText id="reference" value="#{paiementController.selected.reference}" title="#{bundle.CreatePaiementTitle_reference}" />
+                        <p:outputLabel value="#{bundle.CreatePaiementLabel_montant}" for="montant" />
+                        <p:inputText id="montant" value="#{paiementController.selected.montant}" title="#{bundle.CreatePaiementTitle_montant}" />
+                        <p:outputLabel value="#{bundle.CreatePaiementLabel_typePaiement}" for="typePaiement" />
+                        <p:selectOneMenu id="typePaiement" value="#{paiementController.selected.typePaiement}" >
+                            <f:selectItems value="#{typePaiementController.itemsAvailableSelectOne}"
+                                           var="typePaiementItem"
+                                           itemValue="#{typePaiementItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreatePaiementLabel_datePaiement}" for="datePaiement" />
+                        <p:calendar id="datePaiement" pattern="MM/dd/yyyy HH:mm:ss" value="#{paiementController.selected.datePaiement}" title="#{bundle.EditPaiementTitle_datePaiement}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreatePaiementLabel_demandeLocation}" for="demandeLocation" />
+                        <p:selectOneMenu id="demandeLocation" value="#{paiementController.selected.demandeLocation}" >
+                            <f:selectItems value="#{demandeLocationController.itemsAvailableSelectOne}"
+                                           var="demandeLocationItem"
+                                           itemValue="#{demandeLocationItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreatePaiementLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{paiementController.selected.id}" title="#{bundle.CreatePaiementTitle_id}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{paiementController.create}" value="#{bundle.Save}" update="display,:PaiementListForm:datalist,:growl" oncomplete="handleSubmit(args,'PaiementCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="PaiementCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

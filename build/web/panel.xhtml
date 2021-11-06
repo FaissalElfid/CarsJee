@@ -1,0 +1,155 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">Panels</ui:define>
+    
+    <ui:define name="content">
+        <div class="p-grid panel-demo">
+            <div class="p-col-12">
+                <div class="card">
+                    <h5>Toolbar</h5>
+                    <h:form>
+                        <p:toolbar>
+                            <f:facet name="left">
+                                <p:commandButton type="button" value="New" icon="pi pi-plus" styleClass="p-mr-2" />
+                                <p:commandButton type="button" value="Open" icon="pi pi-folder-open" styleClass="secondary-button p-mr-2"/>
+    
+                                <span class="ui-separator">
+                                    <span class="pi pi-ellipsis-v" />
+                                </span>
+    
+                                <p:commandButton type="button" title="Save" icon="pi pi-check" styleClass="success-button p-ml-3 p-mr-2"/>
+                                <p:commandButton type="button" title="Delete" icon="pi pi-trash" styleClass="help-button p-mr-2 "/>
+                                <p:commandButton type="button" title="Print" icon="pi pi-print" styleClass="danger-button p-mr-2"/>
+                            </f:facet>
+    
+                            <f:facet name="right">
+                                <p:menuButton value="Options">
+                                    <p:menuitem value="Save" icon="pi pi-check" url="#" />
+                                    <p:menuitem value="Update" icon="pi pi-upload" url="#"/>
+                                    <p:menuitem value="Delete" icon="pi pi-trash" url="#"/>
+                                    <p:menuitem value="Homepage" icon="pi pi-home" url="#"/>
+                                </p:menuButton>
+                            </f:facet>
+                        </p:toolbar>
+                    </h:form>
+                </div>
+            </div>
+
+            <div class="p-col-12 p-md-6">
+                <div class="card">
+                    <h5>AccordionPanel</h5>
+                    <p:accordionPanel multiple="false" activeIndex="0">
+                        <p:tab title="Header I">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </p:tab>
+                        <p:tab title="Header II">
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque 
+                                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia 
+                                voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                                Consectetur, adipisci velit, sed quia non numquam eius modi.</p>
+                        </p:tab>
+                        <p:tab title="Header III">
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores 
+                                et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. 
+                                Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit 
+                                quo minus.</p>
+                        </p:tab>
+                    </p:accordionPanel>
+                </div>
+
+                <div class="card">
+                    <h5>TabView</h5>
+
+                    <h6>Top Oriented</h6>
+                    <p:tabView>
+                        <p:tab title="Header I">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </p:tab>
+                        <p:tab title="Header II">
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque 
+                                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia 
+                                voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                                Consectetur, adipisci velit, sed quia non numquam eius modi.</p>
+                        </p:tab>
+                        <p:tab title="Header III">
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores 
+                                et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. 
+                                Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit 
+                                quo minus.</p>
+                        </p:tab>
+                    </p:tabView>
+
+                    <h6>Bottom Oriented</h6>
+                    <p:tabView orientation="bottom">
+                        <p:tab title="Header I">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </p:tab>
+                        <p:tab title="Header II">
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque 
+                                ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia 
+                                voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                                Consectetur, adipisci velit, sed quia non numquam eius modi.</p>
+                        </p:tab>
+                        <p:tab title="Header III">
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores 
+                                et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. 
+                                Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit 
+                                quo minus.</p>
+                        </p:tab>                      
+                    </p:tabView>
+                </div>
+            </div>
+
+            <div class="p-col-12 p-md-6">
+                <div class="card">
+                    <h5>Panel</h5>
+                    <p:panel header="Header" toggleable="true">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </p:panel>
+                </div>
+
+                <div class="card">
+                    <h5>Fieldset</h5>
+                    <p:fieldset legend="Legend" toggleable="true" toggleSpeed="500">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </p:fieldset>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Card</h5>
+                        <p:commandButton type="button" icon="pi pi-plus" styleClass="secondary-button" />
+                    </div>
+                    
+                    <p class="card-subtitle">Subtitle</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </div>
+            
+    </ui:define>
+
+</ui:composition>

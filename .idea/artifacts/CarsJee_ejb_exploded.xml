@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="exploded-ejb" name="CarsJee:ejb exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/CarsJee_ejb_exploded</output-path>
-    <root id="root">
-      <element id="javaee-facet-resources" facet="CarsJee/ejb/EJB" />
-      <element id="javaee-facet-classes" facet="CarsJee/ejb/EJB" />
-    </root>
-  </artifact>
-</component>

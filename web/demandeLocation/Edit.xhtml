@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="DemandeLocationEditDlg" widgetVar="DemandeLocationEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditDemandeLocationTitle}">
+            <h:form id="DemandeLocationEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{demandeLocationController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditDemandeLocationLabel_user}" for="user" />
+                        <p:selectOneMenu id="user" value="#{demandeLocationController.selected.user}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{userController.itemsAvailableSelectOne}"
+                                           var="userItem"
+                                           itemValue="#{userItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditDemandeLocationLabel_dateLocation}" for="dateLocation" />
+                        <p:calendar id="dateLocation" pattern="MM/dd/yyyy HH:mm:ss" value="#{demandeLocationController.selected.dateLocation}" title="#{bundle.EditDemandeLocationTitle_dateLocation}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditDemandeLocationLabel_reference}" for="reference" />
+                        <p:inputText id="reference" value="#{demandeLocationController.selected.reference}" title="#{bundle.EditDemandeLocationTitle_reference}" />
+                        <p:outputLabel value="#{bundle.EditDemandeLocationLabel_description}" for="description" />
+                        <p:inputText id="description" value="#{demandeLocationController.selected.description}" title="#{bundle.EditDemandeLocationTitle_description}" />
+                        <p:outputLabel value="#{bundle.EditDemandeLocationLabel_total}" for="total" />
+                        <p:inputText id="total" value="#{demandeLocationController.selected.total}" title="#{bundle.EditDemandeLocationTitle_total}" />
+                        <p:outputLabel value="#{bundle.EditDemandeLocationLabel_totalPaye}" for="totalPaye" />
+                        <p:inputText id="totalPaye" value="#{demandeLocationController.selected.totalPaye}" title="#{bundle.EditDemandeLocationTitle_totalPaye}" />
+                        <p:outputLabel value="#{bundle.EditDemandeLocationLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{demandeLocationController.selected.id}" title="#{bundle.EditDemandeLocationTitle_id}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{demandeLocationController.update}" value="#{bundle.Save}" update="display,:DemandeLocationListForm:datalist,:growl" oncomplete="handleSubmit(args, 'DemandeLocationEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="DemandeLocationEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

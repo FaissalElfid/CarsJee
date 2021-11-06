@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+            <link rel="shortcut icon" href="resources/freya-layout/images/favicon.ico" type="image/x-icon"></link>
+        </f:facet>
+        <title>PrimeFaces Freya - Not Found</title>
+    </h:head>
+
+    <h:body styleClass="exception-body notfound">
+        <div class="exception-topbar">
+            <h:link id="logolink" outcome="/dashboard" styleClass="layout-topbar-logo">
+                <p:graphicImage name="images/#{ guestPreferences.lightLogo ? 'logo-freya-white.svg' : 'logo-freya.svg'}"  library="freya-layout" />
+            </h:link>
+        </div>
+        <div class="exception-wrapper">
+            <div class="exception-content">
+                <p:graphicImage name="images/pages/asset-404.svg"  library="freya-layout" />
+                <span>404</span>
+                <span class="exception-subtitle">Looks like you are lost.</span>
+                <p:commandButton type="button" value="Go back to home" styleClass="primary-button  " />
+            </div>
+            <div class="exception-footer">
+                <h4>freya</h4>
+                <h6>Copyright 2020</h6>
+            </div>
+        </div>
+        <h:outputStylesheet name="css/#{guestPreferences.layout}.css" library="freya-layout" />
+    </h:body>
+
+</html>

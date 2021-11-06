@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CarPricingCreateDlg" widgetVar="CarPricingCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateCarPricingTitle}">
+            <h:form id="CarPricingCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{carPricingController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateCarPricingLabel_reference}" for="reference" />
+                        <p:inputText id="reference" value="#{carPricingController.selected.reference}" title="#{bundle.CreateCarPricingTitle_reference}" />
+                        <p:outputLabel value="#{bundle.CreateCarPricingLabel_modele}" for="modele" />
+                        <p:selectOneMenu id="modele" value="#{carPricingController.selected.modele}" >
+                            <f:selectItems value="#{modeleController.itemsAvailableSelectOne}"
+                                           var="modeleItem"
+                                           itemValue="#{modeleItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.CreateCarPricingLabel_dateMin}" for="dateMin" />
+                        <p:calendar id="dateMin" pattern="MM/dd/yyyy" value="#{carPricingController.selected.dateMin}" title="#{bundle.EditCarPricingTitle_dateMin}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateCarPricingLabel_dateMax}" for="dateMax" />
+                        <p:calendar id="dateMax" pattern="MM/dd/yyyy" value="#{carPricingController.selected.dateMax}" title="#{bundle.EditCarPricingTitle_dateMax}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateCarPricingLabel_montant}" for="montant" />
+                        <p:inputText id="montant" value="#{carPricingController.selected.montant}" title="#{bundle.CreateCarPricingTitle_montant}" />
+                        <p:outputLabel value="#{bundle.CreateCarPricingLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{carPricingController.selected.id}" title="#{bundle.CreateCarPricingTitle_id}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{carPricingController.create}" value="#{bundle.Save}" update="display,:CarPricingListForm:datalist,:growl" oncomplete="handleSubmit(args,'CarPricingCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="CarPricingCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

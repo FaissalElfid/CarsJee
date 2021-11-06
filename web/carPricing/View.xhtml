@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CarPricingViewDlg" widgetVar="CarPricingViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewCarPricingTitle}">
+            <h:form id="CarPricingViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{carPricingController.selected != null}">
+                        <h:outputText value="#{bundle.ViewCarPricingLabel_reference}"/>
+                        <h:outputText value="#{carPricingController.selected.reference}" title="#{bundle.ViewCarPricingTitle_reference}"/>
+                        <h:outputText value="#{bundle.ViewCarPricingLabel_modele}"/>
+                        <h:outputText value="#{carPricingController.selected.modele}" title="#{bundle.ViewCarPricingTitle_modele}"/>
+                        <h:outputText value="#{bundle.ViewCarPricingLabel_dateMin}"/>
+                        <h:outputText value="#{carPricingController.selected.dateMin}" title="#{bundle.ViewCarPricingTitle_dateMin}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewCarPricingLabel_dateMax}"/>
+                        <h:outputText value="#{carPricingController.selected.dateMax}" title="#{bundle.ViewCarPricingTitle_dateMax}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewCarPricingLabel_montant}"/>
+                        <h:outputText value="#{carPricingController.selected.montant}" title="#{bundle.ViewCarPricingTitle_montant}"/>
+                        <h:outputText value="#{bundle.ViewCarPricingLabel_id}"/>
+                        <h:outputText value="#{carPricingController.selected.id}" title="#{bundle.ViewCarPricingTitle_id}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="CarPricingViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
