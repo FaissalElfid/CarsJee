@@ -3,22 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/faissal/Documents/NetBeansProjects/cars-project-v1/CarsJee/web/WEB-INF/beans.xml</file>
-            <file>file:/D:/faissal/Documents/NetBeansProjects/cars-project-v1/CarsJee/web/WEB-INF/config.xhtml</file>
-            <file>file:/D:/faissal/Documents/NetBeansProjects/cars-project-v1/CarsJee/web/WEB-INF/footer.xhtml</file>
-            <file>file:/D:/faissal/Documents/NetBeansProjects/cars-project-v1/CarsJee/src/java/service/CarFacade.java</file>
-            <file>file:/D:/faissal/Documents/NetBeansProjects/cars-project-v1/CarsJee/web/WEB-INF/web.xml</file>
-            <file>file:/D:/faissal/Documents/NetBeansProjects/cars-project-v1/CarsJee/src/java/bean/Car.java</file>
-            <file>file:/D:/faissal/Documents/NetBeansProjects/cars-project-v1/CarsJee/web/crud.xhtml</file>
-            <file>file:/D:/faissal/Documents/NetBeansProjects/cars-project-v1/CarsJee/src/java/controller/CarController.java</file>
-            <file>file:/D:/faissal/Documents/NetBeansProjects/cars-project-v1/CarsJee/src/java/org/primefaces/freya/service/OrderService.java</file>
             <file>file:/D:/faissal/Documents/NetBeansProjects/cars-project-v1/CarsJee/src/java/org/primefaces/freya/service/ProductService.java</file>
             <file>file:/D:/faissal/Documents/NetBeansProjects/cars-project-v1/CarsJee/src/java/org/primefaces/freya/view/CrudDemoView.java</file>
-            <file>file:/D:/faissal/Documents/NetBeansProjects/cars-project-v1/CarsJee/web/WEB-INF/topbar.xhtml</file>
-            <file>file:/D:/faissal/Documents/NetBeansProjects/cars-project-v1/CarsJee/web/WEB-INF/template.xhtml</file>
-            <file>file:/D:/faissal/Documents/NetBeansProjects/cars-project-v1/CarsJee/web/car/Edit.xhtml</file>
-            <file>file:/D:/faissal/Documents/NetBeansProjects/cars-project-v1/CarsJee/web/car/List.xhtml</file>
-            <file>file:/D:/faissal/Documents/NetBeansProjects/cars-project-v1/CarsJee/src/java/org/primefaces/freya/domain/Product.java</file>
+            <file>file:/D:/faissal/Documents/NetBeansProjects/cars-project-v1/CarsJee/src/java/controller/UserController.java</file>
             <file>file:/D:/faissal/Documents/NetBeansProjects/cars-project-v1/CarsJee/src/java/service/AbstractFacade.java</file>
         </group>
     </open-files>
