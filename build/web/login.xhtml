@@ -12,24 +12,26 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
             <meta name="apple-mobile-web-app-capable" content="yes" />
         </f:facet>
-        <title>PrimeFaces Freya - Login</title>
+        <title>Login</title>
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     </h:head>
 
     <h:body styleClass="login-body">
+        <p:growl id="growl" showDetail="true"/>
         <div class="login-wrapper">
             <div class="login-panel">
                 <h:link outcome="/dashboard" styleClass="logo">
                     <p:graphicImage name="images/logo-freya-single.svg" library="freya-layout" />
                 </h:link>
-                <p:inputText id="email" placeholder="Email" />
-                <p:password id="password" placeholder="Password" />
-                <p:commandButton value="LOGIN" type="button" />
+                <p:inputText id="email" placeholder="Login" value="#{loginView.login}" required="true" requiredMessage="Your email is required !" />
+                <p:password id="password" placeholder="Password" value="#{loginView.password}" required="true" requiredMessage="Please enter a password !" />
+                
+                <p:commandButton value="Connect" action="#{loginView.returnAction}" />
                 <a href="#">forget password?</a>
-                <p>Don’t you have an account,  <a href="#">sign up</a></p>
+                <p>Don’t you have an account,  <a href="./signUp.xhtml">sign up</a></p>
             </div>
             <div class="login-footer">
-                <h4>freya</h4>
+                <h4>IRISI</h4>
                 <h6>Copyright 2020</h6>
             </div>
         </div>
