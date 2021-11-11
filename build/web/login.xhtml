@@ -17,9 +17,10 @@
     </h:head>
 
     <h:body styleClass="login-body">
+        
         <p:growl id="growl" showDetail="true"/>
         <div class="login-wrapper">
-            <div class="login-panel">
+            <h:form class="login-panel">
                 <h:link outcome="/dashboard" styleClass="logo">
                     <p:graphicImage name="images/logo-freya-single.svg" library="freya-layout" />
                 </h:link>
@@ -29,7 +30,7 @@
                 <p:commandButton value="Connect" action="#{loginView.returnAction}" />
                 <a href="#">forget password?</a>
                 <p>Don’t you have an account,  <a href="./signUp.xhtml">sign up</a></p>
-            </div>
+            </h:form>
             <div class="login-footer">
                 <h4>IRISI</h4>
                 <h6>Copyright 2020</h6>

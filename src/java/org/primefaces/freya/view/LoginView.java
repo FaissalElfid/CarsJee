@@ -9,7 +9,9 @@ import java.io.Serializable;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
+import service.UserFacade;
 
 /**
  *
@@ -21,6 +23,8 @@ public class LoginView implements Serializable{
     private static final long serialVersionUID = -5433850275008415405L;
     private String login;
     private String password;
+    @Inject
+    private UserFacade userFacade;
 
     public String getLogin() {
         System.out.println( "in getLogin" ); return login;
@@ -39,7 +43,8 @@ public class LoginView implements Serializable{
     }
     public String returnAction() {
         System.out.println( "in returnAction" );
-        if(!password.equals("007")){
+        userFacade.seConnecter(login, password);
+        if(userFacade.seConnecter(login, password) < 0 ){
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "False Email or Password !!"));
             return "failure";
         }else{
