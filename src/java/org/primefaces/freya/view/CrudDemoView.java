@@ -1,116 +1,117 @@
 package org.primefaces.freya.view;
 
+import bean.Car;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.primefaces.PrimeFaces;
-import org.primefaces.freya.domain.Product;
-import org.primefaces.freya.service.OrderService;
-import org.primefaces.freya.service.ProductService;
 import org.primefaces.event.ToggleEvent;
 import org.primefaces.model.Visibility;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.UUID;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
+import service.CarFacade;
 
 @Named
 @ViewScoped
 public class CrudDemoView implements Serializable {
-    
-    private List<Product> products;
 
-    private Product selectedProduct;
+    private List<Car> cars;
 
-    private List<Product> selectedProducts;
+    private Car selectedCar;
 
-    @Inject
-    private ProductService productService;
+    private List<Car> selectedCars;
 
     @Inject
-    private OrderService orderService;
+    private CarFacade carService;
+
+    @Inject
+    private CarFacade carFacade;
 
     @PostConstruct
     public void init() {
-        this.products = this.productService.getProducts();
-    }
-    
-    public List<Product> getProducts() {
-        return products;
+//        this.cars = this.carService.getCars();
+        this.cars = this.carFacade.findAll();
     }
 
-    public Product getSelectedProduct() {
-        return selectedProduct;
+    public List<Car> getCars() {
+        return cars;
     }
 
-    public void setSelectedProduct(Product selectedProduct) {
-        this.selectedProduct = selectedProduct;
+    public Car getSelectedCar() {
+        return selectedCar;
     }
 
-    public List<Product> getSelectedProducts() {
-        return selectedProducts;
+    public void setSelectedCar(Car selectedCar) {
+        this.selectedCar = selectedCar;
     }
 
-    public void setSelectedProducts(List<Product> selectedProducts) {
-        this.selectedProducts = selectedProducts;
+    public List<Car> getSelectedCars() {
+        return selectedCars;
+    }
+
+    public void setSelectedCars(List<Car> selectedCars) {
+        this.selectedCars = selectedCars;
     }
 
     public void openNew() {
-        this.selectedProduct = new Product();
+        this.selectedCar = new Car();
     }
 
-    public void saveProduct() {
-        if (this.selectedProduct.getCode() == null) {
-            this.selectedProduct.setCode(UUID.randomUUID().toString().replaceAll("-", "").substring(0, 9));
-            this.products.add(this.selectedProduct);
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Product Added"));
+    public void saveCar() {
+        if (this.selectedCar.getId() == null) {
+//            this.cars.add(this.selectedCar);
+            System.out.println(selectedCar.getMatricule() + " " + selectedCar.getDateAchat().toString());
+            this.carFacade.create(selectedCar);
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Car Added"));
+        } else {
+            this.carFacade.edit(selectedCar);
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Car Updated"));
         }
-        else {
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Product Updated"));
-        }
-        
+
         PrimeFaces.current().executeScript("PF('manageProductDialog').hide()");
-        PrimeFaces.current().ajax().update("form:messages", "form:dt-products");
+        PrimeFaces.current().ajax().update("form:messages", "form:dt-cars");
     }
 
-    public void deleteProduct() {
-        this.products.remove(this.selectedProduct);
-        this.selectedProduct = null;
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Product Removed"));
-        PrimeFaces.current().ajax().update("form:messages", "form:dt-products");
+    public void deleteCar() {
+        this.carFacade.remove(selectedCar);
+        this.selectedCar = null;
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Car Removed"));
+        PrimeFaces.current().ajax().update("form:messages", "form:dt-cars");
     }
 
     public String getDeleteButtonMessage() {
-        if (hasSelectedProducts()) {
-            int size = this.selectedProducts.size();
-            return size > 1 ? size + " products selected" : "1 product selected";
+        if (hasSelectedCars()) {
+            int size = this.selectedCars.size();
+            return size > 1 ? size + " carss selected" : "1 Car selected";
         }
 
         return "Delete";
     }
 
-    public boolean hasSelectedProducts() {
-        return this.selectedProducts != null && !this.selectedProducts.isEmpty();
+    public boolean hasSelectedCars() {
+        return this.selectedCars != null && !this.selectedCars.isEmpty();
     }
 
-    public void deleteSelectedProducts() {
-        this.products.removeAll(this.selectedProducts);
-        this.selectedProducts = null;
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Products Removed"));
-        PrimeFaces.current().ajax().update("form:messages", "form:dt-products");
+    public void deleteSelectedCars() {
+        this.carFacade.removeAll(this.selectedCars);
+        this.selectedCars = null;
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Cars Removed"));
+        PrimeFaces.current().ajax().update("form:messages", "form:dt-cars");
     }
 
     public void onRowToggle(ToggleEvent event) {
         if (event.getVisibility() == Visibility.VISIBLE) {
-            Product product = (Product) event.getData();
-            if (product.getOrders() == null) {
-                product.setOrders(orderService.getOrders((int) (Math.random() * 10)));
-            }
+            Car car = (Car) event.getData();
+//            if (car.getOrders() == null) {
+//                car.setOrders(orderService.getOrders((int) (Math.random() * 10)));
+//            }
         }
     }
 }
