@@ -7,6 +7,7 @@ package org.primefaces.freya.view;
 
 
 import bean.User;
+import controller.util.AES;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -27,6 +28,8 @@ import service.UserFacade;
 @Named
 @ViewScoped
 public class UserCrudView implements Serializable {
+    final String secretKey = "ssshhhhhhhhhhh!!!!";
+    
     private List<User> users;
 
     private User selectedUser;
@@ -75,6 +78,10 @@ public class UserCrudView implements Serializable {
     }
      
      public void saveUser() {
+         
+         if(this.selectedUser.getPassword().length()>0){
+             selectedUser.setPassword(AES.encrypt(selectedUser.getPassword(), secretKey));
+         }
         if (this.selectedUser.getId() == null) {
 //            this.cars.add(this.selectedCar);
             System.out.println(selectedUser.getLogin() + " " + selectedUser.getPassword());

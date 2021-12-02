@@ -1,9 +1,9 @@
 package org.primefaces.freya.domain;
 
 public enum InventoryStatus {
-    INSTOCK("In Stock"),
-    OUTOFSTOCK("Out of Stock"), 
-    LOWSTOCK("Low Stock");
+    INSTOCK("V.I.P"),
+    OUTOFSTOCK("Old"), 
+    LOWSTOCK("New");
  
     private String text;
  
